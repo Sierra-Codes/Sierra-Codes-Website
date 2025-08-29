@@ -1,6 +1,6 @@
 # Sierra Codes Website
 
-The official website for **Sierra Codes**, a bilingual digital studio by Dr. Stella Bullo.  
+The official website for **Sierra Codes**, a bilingual digital studio by Dr. Stella Bullo.  [https://stellabullo.com/]
 This site showcases coding projects, writing, and design work that merge linguistics, NLP, and front-end development.
 
 ## 🔍 About Sierra Codes
