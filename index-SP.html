@@ -16,28 +16,48 @@
   <link rel="alternate" href="https://sierracodes.com/" hreflang="x-default" />
 
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              DEFAULT: '#1d7f96',
-              dark: '#156270',
-              light: '#4fa7b5'
-            }
+  <!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            DEFAULT: '#1d7f96',  /* azul verdoso principal */
+            dark: '#156270',     /* hover/oscuro */
+            light: '#4fa7b5'     /* acento suave */
           }
+        },
+        keyframes: {
+          fadeInUp: {
+            '0%': { opacity: '0', transform: 'translateY(10px)' },
+            '100%': { opacity: '1', transform: 'translateY(0)' },
+          },
+          fadeIn: {
+            '0%': { opacity: '0' },
+            '100%': { opacity: '1' },
+          }
+        },
+        animation: {
+          fadeInUp: 'fadeInUp 1s ease-out forwards',
+          fadeIn: 'fadeIn 1.5s ease-out forwards',
         }
       }
     }
-  </script>
+  }
+</script>
+
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Global smooth scrolling + transitions -->
   <style>
@@ -70,10 +90,10 @@
       <li><a href="#services" class="hover:text-brand-dark">Servicios</a></li>
       <li><a href="#about" class="hover:text-brand-dark">Acerca</a></li>
       <li><a href="#work" class="hover:text-brand-dark">Portafolio</a></li>
-      <li><a href="#footer" class="hover:text-brand-dark">Contacto</a></li>
+      <li><a href="#contact" class="hover:text-brand-dark">Contacto</a></li>
       <!-- Toggle idioma: EN -->
       <li>
-        <a href="/index-EN.html" class="border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20" aria-label="Cambiar a inglés">EN</a>
+        <a href="/index.html" class="border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20" aria-label="Cambiar a inglés">EN</a>
       </li>
     </ul>
 
@@ -98,7 +118,7 @@
       <li><a href="#services" class="block py-2 hover:text-brand-dark">Servicios</a></li>
       <li><a href="#about" class="block py-2 hover:text-brand-dark">Acerca</a></li>
       <li><a href="#work" class="block py-2 hover:text-brand-dark">Portafolio</a></li>
-      <li><a href="#footer" class="block py-2 hover:text-brand-dark">Contacto</a></li>
+      <li><a href="#contact" class="block py-2 hover:text-brand-dark">Contacto</a></li>
       <li>
         <a href="/index.html" class="mt-2 border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20 w-full inline-block text-center" aria-label="Cambiar a inglés">EN</a>
       </li>
@@ -107,18 +127,49 @@
 </nav>
 
 <!-- HERO -->
-<section id="top" class="pt-32 pb-12 px-6 md:px-12 bg-gradient-to-b from-white to-brand-light/20">
+<section id="top" class="pt-32 md:pt-40 pb-20 md:pb-28 px-5 md:px-8 bg-gradient-to-b from-white to-brand-light/20">
   <div class="max-w-4xl mx-auto text-center">
-    <h1 class="text-4xl md:text-5xl font-bold text-brand leading-tight mb-6">Sierra Codes</h1>
-    <h2 class="text-lg md:text-xl mb-6 text-gray-700">
-      Tecnología con sentido humano: lenguaje, Python y PLN al servicio de personas y equipos.
-    </h2>
-    <div class="flex justify-center gap-4 mb-6">
-      <a href="#services" class="bg-brand text-white px-5 py-3 rounded-md hover:bg-brand-dark">Qué hacemos</a>
-      <a href="#work" class="border border-brand text-brand px-5 py-3 rounded-md hover:bg-brand-light/20">Ver portafolio</a>
-    </div>
+    <!-- Brand -->
+    <p class="text-lg md:text-xl text-brand font-semibold tracking-wide mb-4">
+      Sierra Codes
+    </p>
+
+    <!-- Tagline -->
+    <h1 class="text-2xl md:text-4xl font-bold text-gray-900 leading-snug mb-6 whitespace-nowrap">
+      Tecnología humana moldeada por el lenguaje y el PLN
+    </h1>
+
+    <!-- Subline in Caveat -->
+    <p class="text-2xl md:text-3xl text-gray-600 font-['Caveat',cursive] mb-10 animate-fadeInUp">
+      Donde se encuentran la lingüística, la tecnología y la experiencia humana.
+    </p>
+
+    
+    <!-- Buttons -->
+<div class="flex justify-center gap-3 md:gap-4">
+  <a href="#about"
+     class="inline-flex items-center justify-center w-40 px-6 py-3 
+            text-sm md:text-base font-medium rounded-md 
+            bg-brand text-white 
+            hover:bg-brand-dark transition-colors 
+            animate-fadeInUp delay-200">
+    Acerca
+  </a>
+
+  <a href="#contact"
+     class="inline-flex items-center justify-center w-40 px-6 py-3 
+            text-sm md:text-base font-medium rounded-md 
+            border border-brand text-brand 
+            hover:bg-brand/5 transition-colors 
+            animate-fadeInUp delay-400">
+    Contacto
+  </a>
+</div>
+
+
   </div>
 </section>
+
 
 <!-- CAPACIDADES -->
 <section id="services" class="bg-gray-50">
@@ -230,9 +281,9 @@
       <p class="text-sm mb-4">
         Herramienta bilingüe que interpreta descripciones metafóricas del dolor y las vuelve lenguaje clínico claro y útil para pacientes y profesionales.
       </p>
-      <a href="https://stellabullo.com/apps/explain-my-pain.html" target="_blank" class="text-brand hover:underline">Ir a la app</a>
+      <a href="https://explain-my-pain.onrender.com/" target="_blank" class="text-brand hover:underline" rel="noopener">Ir a la app</a>
       <span class="text-gray-400"> | </span>
-      <a href="https://github.com/Stella5791/translate-my-pain" target="_blank" class="text-brand hover:underline">Ver código</a>
+      <a href="https://github.com/Stella5791/translate-my-pain" target="_blank" class="text-brand hover:underline" rel="noopener">Ver código</a>
     </div>
 
     <!-- Metaphor Tagger -->
@@ -243,7 +294,7 @@
       <p class="text-sm mb-4">
         Análisis de narrativas de dolor con detección automática de metáforas para acelerar el trabajo cualitativo.
       </p>
-      <a href="https://github.com/Stella5791/metaphor-tagger" target="_blank" class="text-brand hover:underline">Ver código</a>
+      <a href="https://github.com/Stella5791/metaphor-tagger" target="_blank" class="text-brand hover:underline" rel="noopener">Ver código</a>
     </div>
 
     <!-- Generador de itinerarios -->
@@ -303,24 +354,111 @@
   </div>
 </section>
 
+<!-- CONTACTO / PRE-FOOTER -->
+<section id="contact" class="relative border-t border-brand/20 bg-brand-light/10">
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <!-- Izquierda: texto -->
+      <div>
+        <p class="text-xs uppercase tracking-widest text-brand/80 mb-2">Contacto</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+          Trabajemos juntos
+        </h2>
+        <p class="text-gray-700 leading-relaxed">
+          Dev bilingüe y lingüista. Construyo herramientas claras y centradas en las personas.
+          Escribime por mail o conectemos por LinkedIn.
+        </p>
+
+        <!-- CTA principal -->
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="mailto:info@stellabullo.com"
+             class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-brand text-white shadow-sm hover:opacity-90">
+            <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
+            <span>Enviar email</span>
+          </a>
+
+          <button type="button" id="copyEmail"
+                  class="inline-flex items-center gap-2 rounded-xl px-4 py-2 border border-brand/30 text-brand hover:bg-brand-light/30">
+            <i data-lucide="copy" class="w-5 h-5" aria-hidden="true"></i>
+            <span id="copyEmailText">Copiar email</span>
+          </button>
+        </div>
+
+        <p class="mt-3 text-sm text-gray-500">Respuesta habitual: dentro de 1–2 días hábiles.</p>
+      </div>
+
+      <!-- Derecha: tarjetas -->
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="mailto:info@stellabullo.com"
+           class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
+          <div class="flex items-center gap-2 text-brand font-semibold">
+            <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
+            Email
+          </div>
+          <p class="mt-2 text-gray-800 font-mono break-all">info@stellabullo.com</p>
+          <p class="mt-1 text-sm text-gray-500">Consultas de proyectos y colaboraciones</p>
+        </a>
+
+        <a href="https://www.linkedin.com/in/stella-bullo-905b17230/"
+           target="_blank" rel="noopener"
+           class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
+          <div class="flex items-center gap-2 text-brand font-semibold">
+            <i data-lucide="linkedin" class="w-5 h-5" aria-hidden="true"></i>
+            LinkedIn
+          </div>
+          <p class="mt-2 text-gray-800">Conexión profesional</p>
+          <span class="mt-2 inline-flex items-center gap-1 text-sm text-brand">
+            Ver perfil <i data-lucide="external-link" class="w-4 h-4"></i>
+          </span>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/Stella5791" target="_blank" rel="noopener"
+           class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
+          <div class="flex items-center gap-2 text-brand font-semibold">
+            <i data-lucide="github" class="w-5 h-5" aria-hidden="true"></i>
+            GitHub
+          </div>
+          <p class="mt-2 text-gray-800">Proyectos y código abierto</p>
+        </a>
+
+        <!-- Portfolio de escritura -->
+        <a href="https://stellabullo.com/" target="_blank" rel="noopener"
+           class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
+          <div class="flex items-center gap-2 text-brand font-semibold">
+            <i data-lucide="book-open" class="w-5 h-5" aria-hidden="true"></i>
+            Portfolio de escritura
+          </div>
+          <p class="mt-2 text-gray-800">Ensayos, investigación y proyectos</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
-<footer id="footer" class="bg-brand-light/20 border-t border-gray-200 py-10 px-6">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-700">
-    <div class="flex items-center gap-2 text-brand font-medium">
-      <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
-      <a href="mailto:info@stellabullo.com" class="hover:underline">info@stellabullo.com</a>
+<footer id="footer" class="bg-brand-light/20 border-t border-gray-200">
+  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="text-sm text-gray-600">
+      © 2025 <span class="font-semibold">Sierra Codes</span> — fundada por Stella Bullo
     </div>
-    <div class="flex flex-wrap justify-center gap-6 items-center text-brand">
-      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="hover:text-brand-dark flex items-center gap-1" rel="noopener">
-        <i data-lucide="linkedin" class="w-5 h-5" aria-hidden="true"></i> LinkedIn
+
+    <div class="flex items-center gap-5 text-sm text-brand">
+      <a href="mailto:info@stellabullo.com" class="hover:text-brand-dark inline-flex items-center gap-1">
+        <i data-lucide="mail" class="w-4 h-4"></i> Email
       </a>
-      <a href="https://ko-fi.com/stellabullo" target="_blank" class="hover:text-brand-dark flex items-center gap-1" rel="noopener">
-        <i data-lucide="coffee" class="w-5 h-5" aria-hidden="true"></i> Ko-fi
+      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" rel="noopener"
+         class="hover:text-brand-dark inline-flex items-center gap-1">
+        <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
       </a>
-      <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" class="hover:text-brand-dark" rel="noopener">ORCID</a>
-    </div>
-    <div class="text-xs text-gray-500 text-center md:text-right">
-      © 2025 Sierra Codes — fundada por Stella Bullo
+      <a href="https://github.com/Stella5791" target="_blank" rel="noopener"
+         class="hover:text-brand-dark inline-flex items-center gap-1">
+        <i data-lucide="github" class="w-4 h-4"></i> GitHub
+      </a>
+      <a href="https://stellabullo.com/" target="_blank" rel="noopener"
+         class="hover:text-brand-dark inline-flex items-center gap-1">
+        <i data-lucide="book-open" class="w-4 h-4"></i> Escritura
+      </a>
     </div>
   </div>
 </footer>
@@ -406,6 +544,21 @@
       document.addEventListener("click", (e) => {
         if (!menu.contains(e.target) && !btn.contains(e.target)) {
           closeMenu();
+        }
+      });
+    }
+
+    // Copiar email
+    const copyBtn = document.getElementById('copyEmail');
+    const copyLabel = document.getElementById('copyEmailText');
+    if (copyBtn && copyLabel) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText('info@stellabullo.com');
+          copyLabel.textContent = '¡Copiado!';
+          setTimeout(() => { copyLabel.textContent = 'Copiar email'; }, 1400);
+        } catch {
+          alert('No se pudo copiar. Email: info@stellabullo.com');
         }
       });
     }

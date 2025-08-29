@@ -15,30 +15,41 @@
   <link rel="alternate" href="https://sierracodes.com/es/" hreflang="es" />
   <link rel="alternate" href="https://sierracodes.com/" hreflang="x-default" />
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              DEFAULT: '#1d7f96',  /* deep blue-teal */
-              dark: '#156270',     /* hover/strong */
-              light: '#4fa7b5'     /* soft accent */
-            }
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            DEFAULT: '#1d7f96',  /* deep blue-teal */
+            dark: '#156270',     /* hover/strong */
+            light: '#4fa7b5'     /* soft accent */
           }
+        },
+        keyframes: {
+          fadeInUp: {
+            '0%':   { opacity: '0', transform: 'translateY(10px)' },
+            '100%': { opacity: '1', transform: 'translateY(0)' }
+          }
+        },
+        animation: {
+          fadeInUp: 'fadeInUp 1s ease-out forwards'
         }
       }
     }
-  </script>
+  }
+</script>
+
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <!-- Global smooth scrolling + transitions -->
   <style>
     html { scroll-behavior: smooth; }
@@ -70,7 +81,7 @@
       <li><a href="#services" class="hover:text-brand-dark ">Services</a></li>
       <li><a href="#about" class="hover:text-brand-dark">About</a></li>
       <li><a href="#work" class="hover:text-brand-dark">Portfolio</a></li>
-      <li><a href="#footer" class="hover:text-brand-dark">Contact</a></li>
+      <li><a href="#contact" class="hover:text-brand-dark">Contact</a></li>
       <!-- Language toggle: ES -->
       <li>
         <a href="/index-SP.html" class="border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20" aria-label="Cambiar a español">ES</a>
@@ -98,7 +109,7 @@
       <li><a href="#services" class="block py-2 hover:text-brand-dark">Services</a></li>
       <li><a href="#about" class="block py-2 hover:text-brand-dark">About</a></li>
       <li><a href="#work" class="block py-2 hover:text-brand-dark">Portfolio</a></li>
-      <li><a href="#footer" class="block py-2 hover:text-brand-dark">Contact</a></li>
+      <li><a href="#contact" class="block py-2 hover:text-brand-dark">Contact</a></li>
       <li>
         <a href="/index-SP.html" class="mt-2 border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20 w-full inline-block text-center" aria-label="Cambiar a español">ES</a>
       </li>
@@ -106,19 +117,44 @@
   </div>
 </nav>
 
+
+
 <!-- HERO -->
-<section id="top" class="pt-32 pb-12 px-6 md:px-12 bg-gradient-to-b from-white to-brand-light/20">
+<section id="top" class="pt-32 md:pt-40 pb-20 md:pb-28 px-5 md:px-8 bg-gradient-to-b from-white to-brand-light/20">
   <div class="max-w-4xl mx-auto text-center">
-    <h1 class="text-4xl md:text-5xl font-bold text-brand leading-tight mb-6">Sierra Codes</h1>
-    <h2 class="text-lg md:text-xl mb-6 text-gray-700">
-      Small, humane builds at the intersection of language, Python & NLP.
-    </h2>
-    <div class="flex justify-center gap-4 mb-6">
-      <a href="#services" class="bg-brand text-white px-5 py-3 rounded-md hover:bg-brand-dark">What we do</a>
-      <a href="#work" class="border border-brand text-brand px-5 py-3 rounded-md hover:bg-brand-light/20">See portfolio</a>
-    </div>
+    <!-- Brand -->
+    <p class="text-lg md:text-xl text-brand font-semibold tracking-wide mb-4">
+      Sierra Codes
+    </p>
+
+    <!-- Tagline -->
+    <h1 class="text-2xl md:text-4xl font-bold text-gray-900 leading-snug mb-6 whitespace-nowrap">
+      Humane technology shaped by language &amp; NLP
+    </h1>
+
+    
+   <!-- Subline in Caveat -->
+<p class="text-2xl md:text-3xl text-gray-600 font-['Caveat',cursive] mb-10 animate-fadeInUp">
+  Where linguistics, technology, and human experience meet.
+</p>
+
+
+    <!-- Buttons -->
+    <div class="flex justify-center gap-3 md:gap-4">
+<a href="#about"
+   class="bg-brand text-white px-5 py-3 rounded-md transition-colors hover:!bg-brand hover:!text-white">
+  About us
+</a>
+
+
+  <a href="#contact"
+     class="inline-flex items-center justify-center min-w-28 px-6 py-3 text-sm md:text-base rounded-md border border-brand text-brand font-medium hover:bg-brand/5 animate-fadeInUp delay-400">
+    Contact
+  </a>
+</div>
   </div>
 </section>
+
 
 <!-- CAPABILITIES -->
 <section id="services" class="bg-gray-50">
@@ -233,11 +269,11 @@
         A bilingual tool that analyzes metaphorical pain descriptions and translates them into clinically meaningful language for patients and clinicians.
       </p>
       <a href="https://explain-my-pain.onrender.com/"
-   target="_blank" rel="noopener"
-   class="text-brand hover:underline">
-  Live app 
-</a>
-<br />
+         target="_blank" rel="noopener"
+         class="text-brand hover:underline">
+        Live app
+      </a>
+      <br />
       <a href="https://github.com/Stella5791/translate-my-pain" target="_blank" class="text-brand hover:underline">View source code</a>
     </div>
 
@@ -309,24 +345,111 @@
   </div>
 </section>
 
+<!-- CONTACT / PRE-FOOTER (updated links) -->
+<section id="contact" class="relative border-t border-brand/20 bg-brand-light/10">
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <!-- Left: pitch -->
+      <div>
+        <p class="text-xs uppercase tracking-widest text-brand/80 mb-2">Contact</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+          Let’s work together
+        </h2>
+        <p class="text-gray-700 leading-relaxed">
+          Bilingual dev & linguist building clear, human-centred tools.
+          Send me an email or connect on LinkedIn—happy to chat projects, collaborations, or speaking.
+        </p>
+
+        <!-- Primary CTA -->
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="mailto:info@stellabullo.com"
+             class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-brand text-white shadow-sm hover:opacity-90">
+            <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
+            <span>Email Stella</span>
+          </a>
+
+          <button type="button" id="copyEmail"
+                  class="inline-flex items-center gap-2 rounded-xl px-4 py-2 border border-brand/30 text-brand hover:bg-brand-light/30">
+            <i data-lucide="copy" class="w-5 h-5" aria-hidden="true"></i>
+            <span id="copyEmailText">Copy email</span>
+          </button>
+        </div>
+
+        <p class="mt-3 text-sm text-gray-500">Typical reply time: within 1–2 business days.</p>
+      </div>
+
+      <!-- Right: contact cards -->
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="mailto:info@stellabullo.com"
+           class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
+          <div class="flex items-center gap-2 text-brand font-semibold">
+            <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
+            Email
+          </div>
+          <p class="mt-2 text-gray-800 font-mono break-all">info@stellabullo.com</p>
+          <p class="mt-1 text-sm text-gray-500">Best for project inquiries & collabs</p>
+        </a>
+
+        <a href="https://www.linkedin.com/in/stella-bullo-905b17230/"
+           target="_blank" rel="noopener"
+           class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
+          <div class="flex items-center gap-2 text-brand font-semibold">
+            <i data-lucide="linkedin" class="w-5 h-5" aria-hidden="true"></i>
+            LinkedIn
+          </div>
+          <p class="mt-2 text-gray-800">Let’s connect professionally</p>
+          <span class="mt-2 inline-flex items-center gap-1 text-sm text-brand">
+            View profile <i data-lucide="external-link" class="w-4 h-4"></i>
+          </span>
+        </a>
+
+        <!-- GitHub (replaces Ko-fi) -->
+        <a href="https://github.com/Stella5791" target="_blank" rel="noopener"
+           class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
+          <div class="flex items-center gap-2 text-brand font-semibold">
+            <i data-lucide="github" class="w-5 h-5" aria-hidden="true"></i>
+            GitHub
+          </div>
+          <p class="mt-2 text-gray-800">Open-source projects & code</p>
+        </a>
+
+        <!-- Writing portfolio (replaces ORCID) -->
+        <a href="https://stellabullo.com/" target="_blank" rel="noopener"
+           class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
+          <div class="flex items-center gap-2 text-brand font-semibold">
+            <i data-lucide="book-open" class="w-5 h-5" aria-hidden="true"></i>
+            Writing Portfolio
+          </div>
+          <p class="mt-2 text-gray-800">Essays, research, and projects</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
-<footer id="footer" class="bg-brand-light/20 border-t border-gray-200 py-10 px-6">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-700">
-    <div class="flex items-center gap-2 text-brand font-medium">
-      <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
-      <a href="mailto:info@stellabullo.com" class="hover:underline">info@stellabullo.com</a>
+<footer id="footer" class="bg-brand-light/20 border-t border-gray-200">
+  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="text-sm text-gray-600">
+      © 2025 <span class="font-semibold">Sierra Codes</span> — founded by Stella Bullo
     </div>
-    <div class="flex flex-wrap justify-center gap-6 items-center text-brand">
-      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="hover:text-brand-dark flex items-center gap-1" rel="noopener">
-        <i data-lucide="linkedin" class="w-5 h-5" aria-hidden="true"></i> LinkedIn
+
+    <div class="flex items-center gap-5 text-sm text-brand">
+      <a href="mailto:info@stellabullo.com" class="hover:text-brand-dark inline-flex items-center gap-1">
+        <i data-lucide="mail" class="w-4 h-4"></i> Email
       </a>
-      <a href="https://ko-fi.com/stellabullo" target="_blank" class="hover:text-brand-dark flex items-center gap-1" rel="noopener">
-        <i data-lucide="coffee" class="w-5 h-5" aria-hidden="true"></i> Ko-fi
+      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" rel="noopener"
+         class="hover:text-brand-dark inline-flex items-center gap-1">
+        <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
       </a>
-      <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" class="hover:text-brand-dark" rel="noopener">ORCID</a>
-    </div>
-    <div class="text-xs text-gray-500 text-center md:text-right">
-      © 2025 Sierra Codes — founded by Stella Bullo
+      <a href="https://github.com/Stella5791" target="_blank" rel="noopener"
+         class="hover:text-brand-dark inline-flex items-center gap-1">
+        <i data-lucide="github" class="w-4 h-4"></i> GitHub
+      </a>
+      <a href="https://stellabullo.com/" target="_blank" rel="noopener"
+         class="hover:text-brand-dark inline-flex items-center gap-1">
+        <i data-lucide="book-open" class="w-4 h-4"></i> Writing
+      </a>
     </div>
   </div>
 </footer>
@@ -412,6 +535,21 @@
       document.addEventListener("click", (e) => {
         if (!menu.contains(e.target) && !btn.contains(e.target)) {
           closeMenu();
+        }
+      });
+    }
+
+    // Copy email button
+    const copyBtn = document.getElementById('copyEmail');
+    const copyLabel = document.getElementById('copyEmailText');
+    if (copyBtn && copyLabel) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText('info@stellabullo.com');
+          copyLabel.textContent = 'Copied!';
+          setTimeout(() => { copyLabel.textContent = 'Copy email'; }, 1400);
+        } catch {
+          alert('Copy failed. Email: info@stellabullo.com');
         }
       });
     }
