@@ -15,41 +15,41 @@
   <link rel="alternate" href="https://sierracodes.com/es/" hreflang="es" />
   <link rel="alternate" href="https://sierracodes.com/" hreflang="x-default" />
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          brand: {
-            DEFAULT: '#1d7f96',  /* deep blue-teal */
-            dark: '#156270',     /* hover/strong */
-            light: '#4fa7b5'     /* soft accent */
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#1d7f96',
+              dark: '#156270',
+              light: '#4fa7b5'
+            }
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%':   { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            }
+          },
+          animation: {
+            fadeInUp: 'fadeInUp 1s ease-out forwards'
           }
-        },
-        keyframes: {
-          fadeInUp: {
-            '0%':   { opacity: '0', transform: 'translateY(10px)' },
-            '100%': { opacity: '1', transform: 'translateY(0)' }
-          }
-        },
-        animation: {
-          fadeInUp: 'fadeInUp 1s ease-out forwards'
         }
       }
     }
-  }
-</script>
-
+  </script>
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
   <!-- Global smooth scrolling + transitions -->
   <style>
     html { scroll-behavior: smooth; }
@@ -78,11 +78,12 @@
 
     <!-- Desktop menu -->
     <ul class="hidden md:flex gap-4 items-center">
-      <li><a href="#services" class="hover:text-brand-dark ">Services</a></li>
+      <li><a href="#services" class="hover:text-brand-dark">Services</a></li>
       <li><a href="#about" class="hover:text-brand-dark">About</a></li>
       <li><a href="#work" class="hover:text-brand-dark">Portfolio</a></li>
+      <li><a href="https://stellabullo.com/" target="_blank" rel="noopener" class="hover:text-brand-dark">Writing</a></li>
+      <li><a href="#projects" class="hover:text-brand-dark">Projects</a></li>
       <li><a href="#contact" class="hover:text-brand-dark">Contact</a></li>
-      <!-- Language toggle: ES -->
       <li>
         <a href="/index-SP.html" class="border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20" aria-label="Cambiar a español">ES</a>
       </li>
@@ -109,6 +110,8 @@
       <li><a href="#services" class="block py-2 hover:text-brand-dark">Services</a></li>
       <li><a href="#about" class="block py-2 hover:text-brand-dark">About</a></li>
       <li><a href="#work" class="block py-2 hover:text-brand-dark">Portfolio</a></li>
+      <li><a href="https://stellabullo.com/" target="_blank" rel="noopener" class="block py-2 hover:text-brand-dark">Writing</a></li>
+      <li><a href="#projects" class="block py-2 hover:text-brand-dark">Projects</a></li>
       <li><a href="#contact" class="block py-2 hover:text-brand-dark">Contact</a></li>
       <li>
         <a href="/index-SP.html" class="mt-2 border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20 w-full inline-block text-center" aria-label="Cambiar a español">ES</a>
@@ -117,43 +120,39 @@
   </div>
 </nav>
 
-
-
-<!-- HERO -->
 <section id="top" class="pt-32 md:pt-40 pb-20 md:pb-28 px-5 md:px-8 bg-gradient-to-b from-white to-brand-light/20">
   <div class="max-w-4xl mx-auto text-center">
-    <!-- Brand -->
-    <p class="text-lg md:text-xl text-brand font-semibold tracking-wide mb-4">
-      Sierra Codes
+
+    <!-- SVG emblem -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" 
+         class="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mx-auto mb-4" 
+         aria-hidden="true" focusable="false">
+      <polyline fill="none" stroke="#2d7a8a" stroke-width="6" 
+                stroke-linecap="round" stroke-linejoin="round"
+                points="5,55 30,20 50,45 75,10 95,55" />
+    </svg>
+
+    <h1 class="text-2xl md:text-4xl font-bold text-gray-900 leading-snug mb-6">
+      Humane technology shaped by language &amp; NLP
+    </h1>
+
+    <p class="text-2xl md:text-3xl text-gray-600 font-['Caveat',cursive] mb-10 animate-fadeInUp">
+      Where linguistics, technology, and human experience meet.
     </p>
 
-    <!-- Tagline -->
-<h1 class="text-2xl md:text-4xl font-bold text-gray-900 leading-snug mb-6">
-  Humane technology shaped by language &amp; NLP
-</h1>
-
-    
-   <!-- Subline in Caveat -->
-<p class="text-2xl md:text-3xl text-gray-600 font-['Caveat',cursive] mb-10 animate-fadeInUp">
-  Where linguistics, technology, and human experience meet.
-</p>
-
-
-    <!-- Buttons -->
     <div class="flex justify-center gap-3 md:gap-4">
-<a href="#about"
-   class="bg-brand text-white px-5 py-3 rounded-md transition-colors hover:!bg-brand hover:!text-white">
-  About us
-</a>
-
-
-  <a href="#contact"
-     class="inline-flex items-center justify-center min-w-28 px-6 py-3 text-sm md:text-base rounded-md border border-brand text-brand font-medium hover:bg-brand/5 animate-fadeInUp delay-400">
-    Contact
-  </a>
-</div>
+      <a href="#about"
+         class="bg-brand text-white px-5 py-3 rounded-md transition-colors hover:!bg-brand hover:!text-white">
+        About us
+      </a>
+      <a href="#contact"
+         class="inline-flex items-center justify-center min-w-28 px-6 py-3 text-sm md:text-base rounded-md border border-brand text-brand font-medium hover:bg-brand/5 animate-fadeInUp delay-400">
+        Contact
+      </a>
+    </div>
   </div>
 </section>
+
 
 
 <!-- CAPABILITIES -->
@@ -165,7 +164,6 @@
     </p>
 
     <div class="grid md:grid-cols-2 gap-8 text-left">
-
       <!-- API Integration & Automation -->
       <div class="bg-white rounded-xl shadow-md hover:shadow-lg p-6 transition-shadow">
         <h3 class="text-lg font-semibold flex items-center gap-2">
@@ -217,7 +215,6 @@
           <li>Create charts for research outputs</li>
         </ul>
       </div>
-
     </div>
   </div>
 </section>
@@ -229,8 +226,8 @@
       <div data-aos="fade-up" class="space-y-5">
         <h2 class="text-2xl md:text-3xl font-semibold text-brand">About</h2>
         <p class="text-gray-700 leading-relaxed">
-          Sierra Codes was founded by <strong>Stella Bullo</strong>, a linguist turned developer (PhD in Linguistics).
-          We work where language, health and technology meet — building small, humane tools
+          Sierra Codes was founded by Stella Bullo, a former academic with a PhD in Linguistics turned developer.
+          We work where language, health and technology meet, building small, humane tools
           that turn lived experience into practical applications.
         </p>
         <p class="text-gray-700">
@@ -255,97 +252,157 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PORTFOLIO -->
 <section id="work" class="bg-gray-50 p-8 md:p-16">
   <h2 class="text-2xl font-semibold text-brand text-center mb-8">Portfolio</h2>
 
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
     <!-- Translate / Explain My Pain -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up">
       <h3 class="text-lg font-semibold">Translate / Explain My Pain</h3>
       <img src="/src/explain-my-pain.png" alt="Explain My Pain app" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Built with: Python, Flask, JavaScript, NLP, HTML, CSS</p>
-      <p class="text-sm mb-4">
-        A bilingual tool that analyzes metaphorical pain descriptions and translates them into clinically meaningful language for patients and clinicians.
+      <p class="text-xs text-gray-600 mb-2">Tech: Python, Flask, JavaScript, NLP</p>
+      <p class="text-sm text-gray-700 mb-4">
+        Bilingual app that turns metaphorical pain descriptions into plain clinical summaries for patients and doctors.
       </p>
-      <a href="https://explain-my-pain.onrender.com/"
-         target="_blank" rel="noopener"
-         class="text-brand hover:underline">
-        Live app
-      </a>
+      <a href="https://explain-my-pain.onrender.com/" target="_blank" rel="noopener" class="text-brand hover:underline">Live app</a>
       <br />
-      <a href="https://github.com/Stella5791/translate-my-pain" target="_blank" class="text-brand hover:underline">View source code</a>
+      <a href="https://github.com/Stella5791/translate-my-pain" target="_blank" rel="noopener" class="text-brand hover:underline">View source code</a>
     </div>
 
     <!-- Metaphor Tagger -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
       <h3 class="text-lg font-semibold">Metaphor Tagger Tool</h3>
       <img src="/src/metaphor_tagger.png" alt="Metaphor Tagger tool" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Built with: Python, Regex, NLP, Flask</p>
-      <p class="text-sm mb-4">
-        Assists researchers by automatically tagging metaphorical expressions in pain narratives, speeding up qualitative analysis.
+      <p class="text-xs text-gray-600 mb-2">Tech: Python, Regex, Flask</p>
+      <p class="text-sm text-gray-700 mb-4">
+        Assists researchers by automatically tagging figurative language in narratives, saving time in qualitative analysis.
       </p>
-      <a href="https://github.com/Stella5791/metaphor-tagger" target="_blank" class="text-brand hover:underline">View source code</a>
+      <a href="https://github.com/Stella5791/metaphor-tagger" target="_blank" rel="noopener" class="text-brand hover:underline">View source code</a>
     </div>
 
     <!-- Travel Itinerary -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
-      <h3 class="text-lg font-semibold">AI-Powered Travel Itinerary Generator</h3>
+      <h3 class="text-lg font-semibold">AI Travel Itinerary Generator</h3>
       <img src="/src/project1.png" alt="Travel Itinerary project" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Built with: Python, OpenWeather API, Rich</p>
-      <p class="text-sm mb-4">
-        Combines live weather data and AI-generated suggestions to create customized travel itineraries with a clean terminal UI.
+      <p class="text-xs text-gray-600 mb-2">Tech: Python, OpenWeather API, Rich</p>
+      <p class="text-sm text-gray-700 mb-4">
+        Creates customised travel plans by combining live weather data with AI-generated suggestions.
       </p>
-      <a href="https://colab.research.google.com/drive/1K43At0WutS7nvRhELn1iJQ272PSGonL9?usp=sharing" class="text-brand hover:underline" target="_blank" rel="noopener">View on Google Colab</a>
+      <a href="https://colab.research.google.com/drive/1K43At0WutS7nvRhELn1iJQ272PSGonL9?usp=sharing" target="_blank" rel="noopener" class="text-brand hover:underline">View on Colab</a>
     </div>
 
     <!-- CSV Viz -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
       <h3 class="text-lg font-semibold">CSV Data Visualization</h3>
       <img src="/src/project2.png" alt="Data visualization project" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Built with: Python, Matplotlib, CSV</p>
-      <p class="text-sm mb-4">
-        Parses CSV files and creates dynamic line graphs to illustrate population growth trends over time.
+      <p class="text-xs text-gray-600 mb-2">Tech: Python, Matplotlib, CSV</p>
+      <p class="text-sm text-gray-700 mb-4">
+        Parses CSV files and generates dynamic charts to illustrate trends in population growth.
       </p>
-      <a href="https://replit.com/@smbu123/python-data-visualization-project" class="text-brand hover:underline" target="_blank" rel="noopener">View Project on Replit</a>
+      <a href="https://replit.com/@smbu123/python-data-visualization-project" target="_blank" rel="noopener" class="text-brand hover:underline">View on Replit</a>
     </div>
 
     <!-- React Dictionary -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
       <h3 class="text-lg font-semibold">React Dictionary App</h3>
       <img src="/src/project4.png" alt="React Dictionary App" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Built with: React, Axios, Bootstrap, Dictionary API, Pexels API</p>
-      <p class="text-sm mb-4">
-        Interactive dictionary pulling definitions, audio, and images from multiple APIs.
+      <p class="text-xs text-gray-600 mb-2">Tech: React, Axios, Bootstrap, APIs</p>
+      <p class="text-sm text-gray-700 mb-4">
+        Interactive dictionary that pulls definitions, audio, and images from multiple sources.
       </p>
-      <a href="https://playful-gecko-ed5205.netlify.app/" class="text-brand hover:underline" target="_blank" rel="noopener">Live Demo</a>
+      <a href="https://playful-gecko-ed5205.netlify.app/" target="_blank" rel="noopener" class="text-brand hover:underline">Live demo</a>
     </div>
 
     <!-- Travel Website -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
       <h3 class="text-lg font-semibold">Responsive Travel Website</h3>
       <img src="/src/project5.png" alt="Responsive Travel Website" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Built with: HTML, CSS, Bootstrap</p>
-      <p class="text-sm mb-4">
-        Promotional site for Córdoba, Argentina, including cultural highlights, embeds, and maps.
+      <p class="text-xs text-gray-600 mb-2">Tech: HTML, CSS, Bootstrap</p>
+      <p class="text-sm text-gray-700 mb-4">
+        Promotional site for Córdoba, Argentina, featuring cultural highlights, maps, and local info.
       </p>
-      <a href="https://silly-stroopwafel-ba4b16.netlify.app/" class="text-brand hover:underline" target="_blank" rel="noopener">Live Demo</a>
+      <a href="https://silly-stroopwafel-ba4b16.netlify.app/" target="_blank" rel="noopener" class="text-brand hover:underline">Live demo</a>
     </div>
 
-    <!-- JS Weather -->
-    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="600">
-      <h3 class="text-lg font-semibold">JavaScript Weather App</h3>
-      <img src="/src/project6.png" alt="JavaScript Weather App" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Built with: JavaScript, HTML, CSS, Bootstrap, Axios, OpenWeather API</p>
-      <p class="text-sm mb-4">
-        Search for a city to view current weather and a 5-day forecast with temperature, humidity, and wind data.
-      </p>
-      <a href="https://sparkly-taffy-530165.netlify.app/" class="text-brand hover:underline" target="_blank" rel="noopener">Live Demo</a>
-    </div>
   </div>
 </section>
 
-<!-- CONTACT / PRE-FOOTER (updated links) -->
+<!-- PROJECTS UNDER CONSTRUCTION -->
+<section id="projects" class="bg-white p-8 md:p-16 border-t border-gray-200">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-semibold text-brand">Projects under construction</h2>
+      <p class="text-gray-700 mt-2 max-w-2xl mx-auto">
+        Research driven builds where linguistics meets NLP.
+        These sketches mark authorship and invite collaboration that respects credit. More to come!
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Localisation App -->
+      <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up">
+        <h3 class="text-lg font-semibold">Localisation App Prototype</h3>
+        <p class="text-xs text-gray-600 mt-1">Tech: Python, FastAPI, spaCy, Transformers</p>
+        <p class="text-sm text-gray-700 mt-2">
+          Uses intercultural pragmatics to adapt tone and metaphor, not just words.
+        </p>
+      </div>
+
+      <!-- Sentiment and Mental Health -->
+      <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-lg font-semibold">Sentiment and Mental Health</h3>
+        <p class="text-xs text-gray-600 mt-1">Tech: Python, Flask, spaCy, Transformers</p>
+        <p class="text-sm text-gray-700 mt-2">
+          Combines PHQ-9 screening with metaphor and stance for richer risk insights.
+        </p>
+      </div>
+
+      <!-- Stance with Appraisal Theory -->
+      <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-lg font-semibold">Appraisal-based Stance Classifier</h3>
+        <p class="text-xs text-gray-600 mt-1">Tech: Python, scikit-learn, spaCy</p>
+        <p class="text-sm text-gray-700 mt-2">
+          Detects hedges and boosters using Appraisal Theory for nuanced stance.
+        </p>
+      </div>
+
+      <!-- Conversation aware Chatbot -->
+      <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-lg font-semibold">Conversation aware Chatbot</h3>
+        <p class="text-xs text-gray-600 mt-1">Tech: Python, FastAPI, rule-based dialogue</p>
+        <p class="text-sm text-gray-700 mt-2">
+          Applies conversation analysis to improve turn-taking and repair.
+        </p>
+      </div>
+
+      <!-- Bias and Variation Benchmark -->
+      <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="text-lg font-semibold">Bias and Variation Benchmark</h3>
+        <p class="text-xs text-gray-600 mt-1">Tech: Python, pandas, Hugging Face Datasets</p>
+        <p class="text-sm text-gray-700 mt-2">
+          Tests NLP models across dialects and registers using sociolinguistic insights.
+        </p>
+      </div>
+
+      <!-- Pragmatics aware Sentiment -->
+      <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
+        <h3 class="text-lg font-semibold">Pragmatics aware Sentiment</h3>
+        <p class="text-xs text-gray-600 mt-1">Tech: Python, spaCy, weak supervision</p>
+        <p class="text-sm text-gray-700 mt-2">
+          Captures irony and understatement with pragmatic annotation.
+        </p>
+      </div>
+    </div>
+
+    <p class="text-xs text-gray-500 mt-8 text-center">
+      Shared here to record direction and invite collaboration. Please credit Sierra Codes when referencing these ideas.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact" class="relative border-t border-brand/20 bg-brand-light/10">
   <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
     <div class="grid md:grid-cols-2 gap-10 items-center">
@@ -356,8 +413,8 @@
           Let’s work together
         </h2>
         <p class="text-gray-700 leading-relaxed">
-          Bilingual dev & linguist building clear, human-centred tools.
-          Send me an email or connect on LinkedIn—happy to chat projects, collaborations, or speaking.
+          Bilingual dev and linguist building clear, human centred tools.
+          Send me an email or connect on LinkedIn. Happy to chat projects, collaborations, or speaking.
         </p>
 
         <!-- Primary CTA -->
@@ -375,7 +432,7 @@
           </button>
         </div>
 
-        <p class="mt-3 text-sm text-gray-500">Typical reply time: within 1–2 business days.</p>
+        <p class="mt-3 text-sm text-gray-500">Typical reply time: within 1 to 2 business days.</p>
       </div>
 
       <!-- Right: contact cards -->
@@ -387,7 +444,7 @@
             Email
           </div>
           <p class="mt-2 text-gray-800 font-mono break-all">info@stellabullo.com</p>
-          <p class="mt-1 text-sm text-gray-500">Best for project inquiries & collabs</p>
+          <p class="mt-1 text-sm text-gray-500">Best for project inquiries and collaborations</p>
         </a>
 
         <a href="https://www.linkedin.com/in/stella-bullo-905b17230/"
@@ -403,17 +460,17 @@
           </span>
         </a>
 
-        <!-- GitHub (replaces Ko-fi) -->
+        <!-- GitHub -->
         <a href="https://github.com/Stella5791" target="_blank" rel="noopener"
            class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
           <div class="flex items-center gap-2 text-brand font-semibold">
             <i data-lucide="github" class="w-5 h-5" aria-hidden="true"></i>
             GitHub
           </div>
-          <p class="mt-2 text-gray-800">Open-source projects & code</p>
+          <p class="mt-2 text-gray-800">Open source projects and code</p>
         </a>
 
-        <!-- Writing portfolio (replaces ORCID) -->
+        <!-- Writing -->
         <a href="https://stellabullo.com/" target="_blank" rel="noopener"
            class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
           <div class="flex items-center gap-2 text-brand font-semibold">
@@ -431,7 +488,7 @@
 <footer id="footer" class="bg-brand-light/20 border-t border-gray-200">
   <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
     <div class="text-sm text-gray-600">
-      © 2025 <span class="font-semibold">Sierra Codes</span> — founded by Stella Bullo
+      © 2025 <span class="font-semibold">Sierra Codes</span> founded by Stella Bullo
     </div>
 
     <div class="flex items-center gap-5 text-sm text-brand">

@@ -6,7 +6,7 @@
   <!-- Meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sierra Codes — Desarrollo con foco humano: lenguaje, Python y PLN para resolver problemas reales." />
+  <meta name="description" content="Sierra Codes — herramientas pequeñas y humanas en la intersección entre lenguaje, Python y PLN." />
   <meta name="author" content="Sierra Codes" />
   <title>Sierra Codes</title>
 
@@ -15,49 +15,40 @@
   <link rel="alternate" href="https://sierracodes.com/es/" hreflang="es" />
   <link rel="alternate" href="https://sierracodes.com/" hreflang="x-default" />
 
-  <!-- Tailwind CSS -->
-  <!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          brand: {
-            DEFAULT: '#1d7f96',  /* azul verdoso principal */
-            dark: '#156270',     /* hover/oscuro */
-            light: '#4fa7b5'     /* acento suave */
-          }
-        },
-        keyframes: {
-          fadeInUp: {
-            '0%': { opacity: '0', transform: 'translateY(10px)' },
-            '100%': { opacity: '1', transform: 'translateY(0)' },
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#1d7f96',
+              dark: '#156270',
+              light: '#4fa7b5'
+            }
           },
-          fadeIn: {
-            '0%': { opacity: '0' },
-            '100%': { opacity: '1' },
+          keyframes: {
+            fadeInUp: {
+              '0%':   { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            }
+          },
+          animation: {
+            fadeInUp: 'fadeInUp 1s ease-out forwards'
           }
-        },
-        animation: {
-          fadeInUp: 'fadeInUp 1s ease-out forwards',
-          fadeIn: 'fadeIn 1.5s ease-out forwards',
         }
       }
     }
-  }
-</script>
-
+  </script>
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Global smooth scrolling + transitions -->
   <style>
@@ -73,9 +64,9 @@
 <!-- NAV -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md text-sm" role="navigation" aria-label="Principal">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-    <!-- Marca -->
+    <!-- Brand -->
     <div class="flex items-center space-x-2">
-      <!-- Logo sierra -->
+      <!-- Sierra line-logo -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" class="w-8 h-8" aria-hidden="true" focusable="false">
         <polyline fill="none" stroke="#1d7f96" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
           points="5,55 30,20 50,45 75,10 95,55" />
@@ -85,19 +76,20 @@
       </h2>
     </div>
 
-    <!-- Menú desktop -->
+    <!-- Desktop menu -->
     <ul class="hidden md:flex gap-4 items-center">
       <li><a href="#services" class="hover:text-brand-dark">Servicios</a></li>
-      <li><a href="#about" class="hover:text-brand-dark">Acerca</a></li>
+      <li><a href="#about" class="hover:text-brand-dark">Quienes somos</a></li>
       <li><a href="#work" class="hover:text-brand-dark">Portafolio</a></li>
+      <li><a href="https://stellabullo.com/" target="_blank" rel="noopener" class="hover:text-brand-dark">Escritura</a></li>
+      <li><a href="#projects" class="hover:text-brand-dark">Proyectos</a></li>
       <li><a href="#contact" class="hover:text-brand-dark">Contacto</a></li>
-      <!-- Toggle idioma: EN -->
       <li>
-        <a href="/index.html" class="border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20" aria-label="Cambiar a inglés">EN</a>
+        <a href="/index.html" class="border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20" aria-label="Switch to English">EN</a>
       </li>
     </ul>
 
-    <!-- Hamburguesa -->
+    <!-- Mobile hamburger -->
     <button id="nav-toggle"
             class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-brand/30"
             aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir navegación">
@@ -112,15 +104,17 @@
     </button>
   </div>
 
-  <!-- Menú móvil -->
+  <!-- Mobile menu -->
   <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white">
     <ul class="px-4 py-3 space-y-2">
       <li><a href="#services" class="block py-2 hover:text-brand-dark">Servicios</a></li>
-      <li><a href="#about" class="block py-2 hover:text-brand-dark">Acerca</a></li>
+      <li><a href="#about" class="block py-2 hover:text-brand-dark">Quienes somos</a></li>
       <li><a href="#work" class="block py-2 hover:text-brand-dark">Portafolio</a></li>
+      <li><a href="https://stellabullo.com/" target="_blank" rel="noopener" class="block py-2 hover:text-brand-dark">Escritura</a></li>
+      <li><a href="#projects" class="block py-2 hover:text-brand-dark">Proyectos</a></li>
       <li><a href="#contact" class="block py-2 hover:text-brand-dark">Contacto</a></li>
       <li>
-        <a href="/index.html" class="mt-2 border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20 w-full inline-block text-center" aria-label="Cambiar a inglés">EN</a>
+        <a href="/index.html" class="mt-2 border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20 w-full inline-block text-center" aria-label="Switch to English">EN</a>
       </li>
     </ul>
   </div>
@@ -129,126 +123,116 @@
 <!-- HERO -->
 <section id="top" class="pt-32 md:pt-40 pb-20 md:pb-28 px-5 md:px-8 bg-gradient-to-b from-white to-brand-light/20">
   <div class="max-w-4xl mx-auto text-center">
-    <!-- Brand -->
-    <p class="text-lg md:text-xl text-brand font-semibold tracking-wide mb-4">
-      Sierra Codes
-    </p>
 
-    <!-- Tagline -->
-    <h1 class="text-2xl md:text-4xl font-bold text-gray-900 leading-snug mb-6 whitespace-nowrap">
+    <!-- SVG emblem -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" 
+         class="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mx-auto mb-4" 
+         aria-hidden="true" focusable="false">
+      <polyline fill="none" stroke="#2d7a8a" stroke-width="6" 
+                stroke-linecap="round" stroke-linejoin="round"
+                points="5,55 30,20 50,45 75,10 95,55" />
+    </svg>
+
+    <h1 class="text-2xl md:text-4xl font-bold text-gray-900 leading-snug mb-6">
       Tecnología humana moldeada por el lenguaje y el PLN
     </h1>
 
-    <!-- Subline in Caveat -->
     <p class="text-2xl md:text-3xl text-gray-600 font-['Caveat',cursive] mb-10 animate-fadeInUp">
-      Donde se encuentran la lingüística, la tecnología y la experiencia humana.
+      Donde la lingüística, la tecnología y la experiencia humana se encuentran.
     </p>
 
-    
-    <!-- Buttons -->
-<div class="flex justify-center gap-3 md:gap-4">
-  <a href="#about"
-     class="inline-flex items-center justify-center w-40 px-6 py-3 
-            text-sm md:text-base font-medium rounded-md 
-            bg-brand text-white 
-            hover:bg-brand-dark transition-colors 
-            animate-fadeInUp delay-200">
-    Acerca
-  </a>
-
-  <a href="#contact"
-     class="inline-flex items-center justify-center w-40 px-6 py-3 
-            text-sm md:text-base font-medium rounded-md 
-            border border-brand text-brand 
-            hover:bg-brand/5 transition-colors 
-            animate-fadeInUp delay-400">
-    Contacto
-  </a>
-</div>
-
-
+    <div class="flex justify-center gap-3 md:gap-4">
+      <a href="#about"
+         class="bg-brand text-white px-5 py-3 rounded-md transition-colors hover:!bg-brand hover:!text-white">
+        Acerca de
+      </a>
+      <a href="#contact"
+         class="inline-flex items-center justify-center min-w-28 px-6 py-3 text-sm md:text-base rounded-md border border-brand text-brand font-medium hover:bg-brand/5 animate-fadeInUp delay-400">
+        Contacto
+      </a>
+    </div>
   </div>
 </section>
 
 
-<!-- CAPACIDADES -->
+<!-- CAPABILITIES -->
 <section id="services" class="bg-gray-50">
   <div class="max-w-6xl mx-auto px-6 py-12 md:px-12 md:py-16 text-center" data-aos="fade-up">
     <h2 class="text-2xl md:text-3xl font-semibold text-brand mb-6">Servicios</h2>
     <p class="text-gray-700 mb-12 max-w-2xl mx-auto">
-      Diseñamos y construimos soluciones a medida que conectan lenguaje, datos y experiencia de usuario:
+      Creamos herramientas pequeñas y con propósito que conectan lenguaje, datos y experiencia vivida:
     </p>
 
     <div class="grid md:grid-cols-2 gap-8 text-left">
-      <!-- API & Automatización -->
+      <!-- API Integration & Automation -->
       <div class="bg-white rounded-xl shadow-md hover:shadow-lg p-6 transition-shadow">
         <h3 class="text-lg font-semibold flex items-center gap-2">
           <i data-lucide="workflow" class="w-5 h-5 text-brand" aria-hidden="true"></i>
-          Integración de APIs y automatización
+          Integración de APIs y Automatización
         </h3>
         <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mt-2">
-          <li>Conectamos servicios de terceros a tus herramientas en Python</li>
-          <li>Automatizamos flujos de texto, datos y reportes</li>
-          <li>Utilidades ligeras para tareas repetitivas</li>
+          <li>Conectar APIs de terceros en herramientas Python</li>
+          <li>Automatizar flujos de texto y datos</li>
+          <li>Scripts ligeros para tareas repetibles</li>
         </ul>
       </div>
 
-      <!-- PLN & Investigación -->
+      <!-- NLP & Research -->
       <div class="bg-white rounded-xl shadow-md hover:shadow-lg p-6 transition-shadow">
         <h3 class="text-lg font-semibold flex items-center gap-2">
           <i data-lucide="brain-circuit" class="w-5 h-5 text-brand" aria-hidden="true"></i>
-          PLN e investigación aplicada
+          PLN e Investigación
         </h3>
         <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mt-2">
-          <li>Etiquetado y clasificación basados en reglas transparentes</li>
-          <li>Extracción de sentimiento, palabras clave y patrones</li>
-          <li>Detección de metáforas y fenómenos discursivos</li>
+          <li>Etiquetado y clasificación basados en reglas</li>
+          <li>Análisis de sentimiento y extracción de keywords</li>
+          <li>Reconocimiento de metáforas</li>
         </ul>
       </div>
 
-      <!-- Front-End -->
+      <!-- Front-End Support -->
       <div class="bg-white rounded-xl shadow-md hover:shadow-lg p-6 transition-shadow">
         <h3 class="text-lg font-semibold flex items-center gap-2">
           <i data-lucide="monitor" class="w-5 h-5 text-brand" aria-hidden="true"></i>
-          Soporte front-end
+          Soporte Front-End
         </h3>
         <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mt-2">
-          <li>Páginas responsivas con HTML, CSS y Tailwind</li>
-          <li>Integración de APIs en interfaces estáticas</li>
-          <li>Publicación y mantenimiento de sitios de proyecto</li>
+          <li>Paginas responsivas con HTML, CSS, Tailwind</li>
+          <li>Integración de APIs en UIs estáticas</li>
+          <li>Publicación de sitios de proyecto</li>
         </ul>
       </div>
 
-      <!-- Visualización de Datos -->
+      <!-- Data Visualization -->
       <div class="bg-white rounded-xl shadow-md hover:shadow-lg p-6 transition-shadow">
         <h3 class="text-lg font-semibold flex items-center gap-2">
           <i data-lucide="bar-chart-3" class="w-5 h-5 text-brand" aria-hidden="true"></i>
-          Visualización de datos
+          Visualización de Datos
         </h3>
         <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mt-2">
-          <li>Preparación y limpieza de CSV/JSON</li>
-          <li>Gráficos con Matplotlib para análisis claros</li>
-          <li>Soporte visual para informes e investigación</li>
+          <li>Preparación y limpieza de datos CSV/JSON</li>
+          <li>Visualización con Matplotlib</li>
+          <li>Gráficos para entregables de investigación</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ACERCA -->
+<!-- ABOUT -->
 <section id="about" class="bg-brand-light/10">
   <div class="max-w-6xl mx-auto px-6 py-12 md:px-12 md:py-16">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div data-aos="fade-up" class="space-y-5">
-        <h2 class="text-2xl md:text-3xl font-semibold text-brand">Acerca</h2>
+        <h2 class="text-2xl md:text-3xl font-semibold text-brand">Quienes somos</h2>
         <p class="text-gray-700 leading-relaxed">
-          <strong>Sierra Codes</strong> es un estudio fundado por <strong>Stella Bullo</strong>, lingüista y desarrolladora (PhD en Lingüística).
-          Nos especializamos en el cruce entre lenguaje, salud y tecnología: soluciones pequeñas, claras y útiles
-          que transforman relatos y datos en decisiones y acciones.
+          Sierra Codes fue fundada por Stella Bullo, Doctora en Lingüística y academica devenida desarrolladora.
+          Trabajamos donde el lenguaje, la salud y la tecnología se encuentran, creando herramientas pequeñas y humanas
+          que transforman la experiencia vivida en aplicaciones prácticas.
         </p>
         <p class="text-gray-700">
-          También podés explorar la <a href="https://stellabullo.com/writing" class="text-brand hover:underline" target="_blank" rel="noopener">escritura</a>
-          de Stella: ideas sobre lenguaje, código e investigación aplicada.
+          También podés explorar la <a href="https://stellabullo.com/" class="text-brand hover:underline" target="_blank" rel="noopener">escritura</a> de Stella,
+          con reflexiones sobre lenguaje, código e investigación aplicada.
         </p>
       </div>
       <div data-aos="fade-left" class="flex justify-center">
@@ -268,108 +252,172 @@
   </div>
 </section>
 
-<!-- PROYECTOS -->
+<!-- PORTFOLIO -->
 <section id="work" class="bg-gray-50 p-8 md:p-16">
   <h2 class="text-2xl font-semibold text-brand text-center mb-8">Portafolio</h2>
 
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
     <!-- Translate / Explain My Pain -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up">
       <h3 class="text-lg font-semibold">Translate / Explain My Pain</h3>
       <img src="/src/explain-my-pain.png" alt="Aplicación Explain My Pain" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Tecnologías: Python, Flask, JavaScript, PLN, HTML, CSS</p>
-      <p class="text-sm mb-4">
-        Herramienta bilingüe que interpreta descripciones metafóricas del dolor y las vuelve lenguaje clínico claro y útil para pacientes y profesionales.
+      <p class="text-xs text-gray-600 mb-2">Tecnologías: Python, Flask, JavaScript, PLN</p>
+      <p class="text-sm text-gray-700 mb-4">
+        App bilingüe que convierte descripciones metafóricas del dolor en resúmenes clínicos claros para pacientes y profesionales.
       </p>
-      <a href="https://explain-my-pain.onrender.com/" target="_blank" class="text-brand hover:underline" rel="noopener">Ir a la app</a>
-      <span class="text-gray-400"> | </span>
-      <a href="https://github.com/Stella5791/translate-my-pain" target="_blank" class="text-brand hover:underline" rel="noopener">Ver código</a>
+      <a href="https://explain-my-pain.onrender.com/" target="_blank" rel="noopener" class="text-brand hover:underline">Ver app</a>
+      <br />
+      <a href="https://github.com/Stella5791/translate-my-pain" target="_blank" rel="noopener" class="text-brand hover:underline">Código fuente</a>
     </div>
 
     <!-- Metaphor Tagger -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
-      <h3 class="text-lg font-semibold">Metaphor Tagger</h3>
+      <h3 class="text-lg font-semibold">Metaphor Tagger Tool</h3>
       <img src="/src/metaphor_tagger.png" alt="Herramienta Metaphor Tagger" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Tecnologías: Python, Regex, PLN, Flask</p>
-      <p class="text-sm mb-4">
-        Análisis de narrativas de dolor con detección automática de metáforas para acelerar el trabajo cualitativo.
+      <p class="text-xs text-gray-600 mb-2">Tecnologías: Python, Regex, Flask</p>
+      <p class="text-sm text-gray-700 mb-4">
+        Etiquetado automático de lenguaje figurado en narrativas para acelerar el análisis cualitativo.
       </p>
-      <a href="https://github.com/Stella5791/metaphor-tagger" target="_blank" class="text-brand hover:underline" rel="noopener">Ver código</a>
+      <a href="https://github.com/Stella5791/metaphor-tagger" target="_blank" rel="noopener" class="text-brand hover:underline">Código fuente</a>
     </div>
 
-    <!-- Generador de itinerarios -->
+    <!-- Travel Itinerary -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
-      <h3 class="text-lg font-semibold">Generador de itinerarios con IA</h3>
-      <img src="/src/project1.png" alt="Proyecto Itinerarios" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Tecnologías: Python, OpenWeather API, Rich</p>
-      <p class="text-sm mb-4">
-        Clima en vivo + sugerencias automáticas para armar viajes personalizados en una interfaz de consola limpia.
+      <h3 class="text-lg font-semibold">Generador de Itinerarios con IA</h3>
+      <img src="/src/project1.png" alt="Proyecto de itinerarios de viaje" class="my-4 rounded" />
+      <p class="text-xs text-gray-600 mb-2">Tecnologías: Python, OpenWeather API, Rich</p>
+      <p class="text-sm text-gray-700 mb-4">
+        Planes de viaje personalizados que combinan clima en tiempo real con sugerencias generadas por IA.
       </p>
-      <a href="https://colab.research.google.com/drive/1K43At0WutS7nvRhELn1iJQ272PSGonL9?usp=sharing" class="text-brand hover:underline" target="_blank" rel="noopener">Ver en Google Colab</a>
+      <a href="https://colab.research.google.com/drive/1K43At0WutS7nvRhELn1iJQ272PSGonL9?usp=sharing" target="_blank" rel="noopener" class="text-brand hover:underline">Ver en Colab</a>
     </div>
 
-    <!-- Visualización CSV -->
+    <!-- CSV Viz -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
-      <h3 class="text-lg font-semibold">Visualización de datos CSV</h3>
-      <img src="/src/project2.png" alt="Visualización de datos" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Tecnologías: Python, Matplotlib, CSV</p>
-      <p class="text-sm mb-4">
-        Lectura y gráficos de series para mostrar tendencias poblacionales a lo largo del tiempo.
+      <h3 class="text-lg font-semibold">Visualización de Datos CSV</h3>
+      <img src="/src/project2.png" alt="Proyecto de visualización de datos" class="my-4 rounded" />
+      <p class="text-xs text-gray-600 mb-2">Tecnologías: Python, Matplotlib, CSV</p>
+      <p class="text-sm text-gray-700 mb-4">
+        Procesa CSV y genera gráficos dinámicos para ilustrar tendencias de crecimiento poblacional.
       </p>
-      <a href="https://replit.com/@smbu123/python-data-visualization-project" class="text-brand hover:underline" target="_blank" rel="noopener">Ver en Replit</a>
+      <a href="https://replit.com/@smbu123/python-data-visualization-project" target="_blank" rel="noopener" class="text-brand hover:underline">Ver en Replit</a>
     </div>
 
-    <!-- Diccionario React -->
+    <!-- React Dictionary -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
-      <h3 class="text-lg font-semibold">App de diccionario (React)</h3>
-      <img src="/src/project4.png" alt="Diccionario React" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Tecnologías: React, Axios, Bootstrap, Dictionary API, Pexels API</p>
-      <p class="text-sm mb-4">
-        Definiciones, sinónimos, audio e imágenes integradas en una experiencia simple y ágil.
+      <h3 class="text-lg font-semibold">Diccionario en React</h3>
+      <img src="/src/project4.png" alt="Aplicación de diccionario en React" class="my-4 rounded" />
+      <p class="text-xs text-gray-600 mb-2">Tecnologías: React, Axios, Bootstrap, APIs</p>
+      <p class="text-sm text-gray-700 mb-4">
+        Diccionario interactivo con definiciones, audio e imágenes de múltiples fuentes.
       </p>
-      <a href="https://playful-gecko-ed5205.netlify.app/" class="text-brand hover:underline" target="_blank" rel="noopener">Demo en vivo</a>
+      <a href="https://playful-gecko-ed5205.netlify.app/" target="_blank" rel="noopener" class="text-brand hover:underline">Ver demo</a>
     </div>
 
-    <!-- Sitio de viajes -->
+    <!-- Travel Website -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
-      <h3 class="text-lg font-semibold">Sitio promocional de viajes</h3>
-      <img src="/src/project5.png" alt="Sitio de viajes" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Tecnologías: HTML, CSS, Bootstrap</p>
-      <p class="text-sm mb-4">
-        Córdoba (Argentina): destacados culturales, embeds e integración con mapas, con diseño adaptable a móvil.
+      <h3 class="text-lg font-semibold">Sitio Web de Viajes Responsivo</h3>
+      <img src="/src/project5.png" alt="Sitio web de viajes" class="my-4 rounded" />
+      <p class="text-xs text-gray-600 mb-2">Tecnologías: HTML, CSS, Bootstrap</p>
+      <p class="text-sm text-gray-700 mb-4">
+        Sitio promocional de Córdoba, Argentina, con mapas, información local y puntos destacados.
       </p>
-      <a href="https://silly-stroopwafel-ba4b16.netlify.app/" class="text-brand hover:underline" target="_blank" rel="noopener">Demo en vivo</a>
+      <a href="https://silly-stroopwafel-ba4b16.netlify.app/" target="_blank" rel="noopener" class="text-brand hover:underline">Ver demo</a>
     </div>
 
-    <!-- Clima JS -->
-    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="600">
-      <h3 class="text-lg font-semibold">App de clima (JavaScript)</h3>
-      <img src="/src/project6.png" alt="App de clima" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">Tecnologías: JavaScript, HTML, CSS, Bootstrap, Axios, OpenWeather API</p>
-      <p class="text-sm mb-4">
-        Buscá una ciudad y consultá el estado actual y el pronóstico a 5 días: temperatura, humedad y viento.
-      </p>
-      <a href="https://sparkly-taffy-530165.netlify.app/" class="text-brand hover:underline" target="_blank" rel="noopener">Demo en vivo</a>
-    </div>
   </div>
 </section>
 
-<!-- CONTACTO / PRE-FOOTER -->
+<!-- PROYECTOS EN CONSTRUCCIÓN -->
+<section id="projects" class="bg-white p-8 md:p-16 border-t border-gray-200">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-semibold text-brand">Proyectos en construcción</h2>
+      <p class="text-gray-700 mt-2 max-w-2xl mx-auto">
+        Desarrollos basados en investigación donde la lingüística se encuentra con el PLN.
+        Estas ideas marcan autoría e invitan a colaboraciones que respeten el crédito. Próximamente más.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Localisation App -->
+      <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up">
+        <h3 class="text-lg font-semibold">Prototipo de App de Localización</h3>
+        <p class="text-xs text-gray-600 mt-1">Tecnologías: Python, FastAPI, spaCy, Transformers</p>
+        <p class="text-sm text-gray-700 mt-2">
+          Adapta tono y metáforas con pragmática intercultural, no solo palabras.
+        </p>
+      </div>
+
+      <!-- Sentiment and Mental Health -->
+      <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-lg font-semibold">Sentimiento y Salud Mental</h3>
+        <p class="text-xs text-gray-600 mt-1">Tecnologías: Python, Flask, spaCy, Transformers</p>
+        <p class="text-sm text-gray-700 mt-2">
+          Combina PHQ-9 con metáforas y postura para una mirada de riesgo más rica.
+        </p>
+      </div>
+
+      <!-- Stance with Appraisal Theory -->
+      <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-lg font-semibold">Clasificador de Postura con Appraisal</h3>
+        <p class="text-xs text-gray-600 mt-1">Tecnologías: Python, scikit-learn, spaCy</p>
+        <p class="text-sm text-gray-700 mt-2">
+          Detecta atenuadores e intensificadores con Teoría de la Valoración para una postura más matizada.
+        </p>
+      </div>
+
+      <!-- Conversation aware Chatbot -->
+      <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-lg font-semibold">Chatbot Sensible al Discurso</h3>
+        <p class="text-xs text-gray-600 mt-1">Tecnologías: Python, FastAPI, reglas de diálogo</p>
+        <p class="text-sm text-gray-700 mt-2">
+          Aplica análisis conversacional para mejorar turnos y reparaciones.
+        </p>
+      </div>
+
+      <!-- Bias and Variation Benchmark -->
+      <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="text-lg font-semibold">Benchmark de Sesgo y Variación</h3>
+        <p class="text-xs text-gray-600 mt-1">Tecnologías: Python, pandas, Hugging Face Datasets</p>
+        <p class="text-sm text-gray-700 mt-2">
+          Evalúa modelos en dialectos y registros con enfoque sociolingüístico.
+        </p>
+      </div>
+
+      <!-- Pragmatics aware Sentiment -->
+      <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
+        <h3 class="text-lg font-semibold">Sentimiento con Conciencia Pragmática</h3>
+        <p class="text-xs text-gray-600 mt-1">Tecnologías: Python, spaCy, weak supervision</p>
+        <p class="text-sm text-gray-700 mt-2">
+          Captura ironía y eufemismos mediante anotación pragmática.
+        </p>
+      </div>
+    </div>
+
+    <p class="text-xs text-gray-500 mt-8 text-center">
+      Compartido para documentar dirección e invitar a colaboración. Por favor, citá a Sierra Codes al referirte a estas ideas.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
 <section id="contact" class="relative border-t border-brand/20 bg-brand-light/10">
   <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
     <div class="grid md:grid-cols-2 gap-10 items-center">
-      <!-- Izquierda: texto -->
+      <!-- Left: pitch -->
       <div>
         <p class="text-xs uppercase tracking-widest text-brand/80 mb-2">Contacto</p>
         <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
           Trabajemos juntos
         </h2>
         <p class="text-gray-700 leading-relaxed">
-          Dev bilingüe y lingüista. Construyo herramientas claras y centradas en las personas.
-          Escribime por mail o conectemos por LinkedIn.
+          Desarrolladora y lingüista bilingüe creando herramientas claras y centradas en las personas.
+          Escribime o conectemos en LinkedIn. Abierta a proyectos, colaboraciones o charlas.
         </p>
 
-        <!-- CTA principal -->
+        <!-- Primary CTA -->
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="mailto:info@stellabullo.com"
              class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-brand text-white shadow-sm hover:opacity-90">
@@ -384,10 +432,10 @@
           </button>
         </div>
 
-        <p class="mt-3 text-sm text-gray-500">Respuesta habitual: dentro de 1–2 días hábiles.</p>
+        <p class="mt-3 text-sm text-gray-500">Suele responder en 1 a 2 días hábiles.</p>
       </div>
 
-      <!-- Derecha: tarjetas -->
+      <!-- Right: contact cards -->
       <div class="grid sm:grid-cols-2 gap-4">
         <a href="mailto:info@stellabullo.com"
            class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
@@ -396,7 +444,7 @@
             Email
           </div>
           <p class="mt-2 text-gray-800 font-mono break-all">info@stellabullo.com</p>
-          <p class="mt-1 text-sm text-gray-500">Consultas de proyectos y colaboraciones</p>
+          <p class="mt-1 text-sm text-gray-500">Para consultas de proyectos y colaboraciones</p>
         </a>
 
         <a href="https://www.linkedin.com/in/stella-bullo-905b17230/"
@@ -406,7 +454,7 @@
             <i data-lucide="linkedin" class="w-5 h-5" aria-hidden="true"></i>
             LinkedIn
           </div>
-          <p class="mt-2 text-gray-800">Conexión profesional</p>
+          <p class="mt-2 text-gray-800">Conectemos profesionalmente</p>
           <span class="mt-2 inline-flex items-center gap-1 text-sm text-brand">
             Ver perfil <i data-lucide="external-link" class="w-4 h-4"></i>
           </span>
@@ -419,15 +467,15 @@
             <i data-lucide="github" class="w-5 h-5" aria-hidden="true"></i>
             GitHub
           </div>
-          <p class="mt-2 text-gray-800">Proyectos y código abierto</p>
+          <p class="mt-2 text-gray-800">Proyectos y código open source</p>
         </a>
 
-        <!-- Portfolio de escritura -->
+        <!-- Writing -->
         <a href="https://stellabullo.com/" target="_blank" rel="noopener"
            class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
           <div class="flex items-center gap-2 text-brand font-semibold">
             <i data-lucide="book-open" class="w-5 h-5" aria-hidden="true"></i>
-            Portfolio de escritura
+            Escritura
           </div>
           <p class="mt-2 text-gray-800">Ensayos, investigación y proyectos</p>
         </a>
@@ -440,7 +488,7 @@
 <footer id="footer" class="bg-brand-light/20 border-t border-gray-200">
   <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
     <div class="text-sm text-gray-600">
-      © 2025 <span class="font-semibold">Sierra Codes</span> — fundada por Stella Bullo
+      © 2025 <span class="font-semibold">Sierra Codes</span> fundada por Stella Bullo
     </div>
 
     <div class="flex items-center gap-5 text-sm text-brand">
@@ -473,16 +521,16 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // Iconos
+    // Lucide icons
     if (typeof lucide !== "undefined") lucide.createIcons();
 
-    // Sombra al hacer scroll
+    // Shadow on scroll
     const nav = document.querySelector("nav");
     window.addEventListener("scroll", () => {
       nav.classList.toggle("shadow-lg", window.scrollY > 10);
     });
 
-    // Botón volver arriba
+    // Scroll-to-top
     const scrollBtn = document.getElementById("scrollToTopBtn");
     window.addEventListener("scroll", () => {
       scrollBtn.classList.toggle("hidden", window.scrollY < 300);
@@ -494,7 +542,7 @@
     // AOS
     AOS.init({ duration: 1000, once: true });
 
-    // Anclas con offset
+    // Smooth anchor scroll with offset for fixed nav
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function (e) {
         const href = this.getAttribute("href");
@@ -510,7 +558,7 @@
       });
     });
 
-    // Toggle móvil
+    // Mobile nav toggle
     const btn = document.getElementById("nav-toggle");
     const menu = document.getElementById("mobile-menu");
     const iconOpen = document.getElementById("icon-open");
@@ -534,13 +582,13 @@
         iconClose.classList.toggle("hidden", !willOpen);
       });
 
-      // Cerrar al hacer clic en un enlace
+      // Close on mobile link click
       menu.querySelectorAll("a").forEach(a => { a.addEventListener("click", closeMenu); });
 
-      // Cerrar con ESC
+      // Close on ESC
       document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 
-      // Cerrar al click afuera
+      // Close on click outside
       document.addEventListener("click", (e) => {
         if (!menu.contains(e.target) && !btn.contains(e.target)) {
           closeMenu();
@@ -548,7 +596,7 @@
       });
     }
 
-    // Copiar email
+    // Copy email button
     const copyBtn = document.getElementById('copyEmail');
     const copyLabel = document.getElementById('copyEmailText');
     if (copyBtn && copyLabel) {
