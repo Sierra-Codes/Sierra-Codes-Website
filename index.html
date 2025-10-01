@@ -48,7 +48,7 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
   <!-- Global smooth scrolling + transitions -->
   <style>
@@ -57,6 +57,11 @@
     .card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
     img:hover { transform: scale(1.03); }
     a:hover { text-decoration: underline; color: #1d7f96; }
+    /* Dropdown polish */
+    summary::-webkit-details-marker { display: none; }
+    summary::marker { content: ""; }
+    details[open] > ul { z-index: 60; }
+    summary:focus { outline: 2px solid #1d7f96; outline-offset: 2px; border-radius: 4px; }
   </style>
 </head>
 <body class="font-sans text-gray-900">
@@ -81,7 +86,24 @@
       <li><a href="#services" class="hover:text-brand-dark">Services</a></li>
       <li><a href="#about" class="hover:text-brand-dark">About</a></li>
       <li><a href="#work" class="hover:text-brand-dark">Portfolio</a></li>
-      <li><a href="https://stellabullo.com/" target="_blank" rel="noopener" class="hover:text-brand-dark">Writing</a></li>
+
+      <!-- Writing dropdown (desktop) -->
+      <li class="relative">
+        <details class="group">
+          <summary class="list-none inline-flex items-center gap-1 cursor-pointer select-none hover:text-brand-dark focus:outline-none">
+            Writing
+            <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/>
+            </svg>
+          </summary>
+          <ul class="absolute right-0 mt-2 w-72 rounded-md border border-gray-200 bg-white shadow-lg py-2">
+            <li><a href="/articles/where-linguistics-meets-nlp.html" class="block px-4 py-2 hover:bg-brand-light/20">Where Linguistics Meets NLP</a></li>
+            <li><a href="/articles/from-annotation-to-application.html" class="block px-4 py-2 hover:bg-brand-light/20">From Annotation to Application</a></li>
+            <li><a href="https://stellabullo.com/" target="_blank" rel="noopener" class="block px-4 py-2 hover:bg-brand-light/20">More writing → stellabullo.com</a></li>
+          </ul>
+        </details>
+      </li>
+
       <li><a href="#projects" class="hover:text-brand-dark">Projects</a></li>
       <li><a href="#contact" class="hover:text-brand-dark">Contact</a></li>
       <li>
@@ -110,7 +132,24 @@
       <li><a href="#services" class="block py-2 hover:text-brand-dark">Services</a></li>
       <li><a href="#about" class="block py-2 hover:text-brand-dark">About</a></li>
       <li><a href="#work" class="block py-2 hover:text-brand-dark">Portfolio</a></li>
-      <li><a href="https://stellabullo.com/" target="_blank" rel="noopener" class="block py-2 hover:text-brand-dark">Writing</a></li>
+
+      <!-- Writing submenu (mobile) -->
+      <li>
+        <details class="group">
+          <summary class="list-none w-full flex items-center justify-between py-2 cursor-pointer hover:text-brand-dark">
+            <span>Writing</span>
+            <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/>
+            </svg>
+          </summary>
+          <ul class="ml-3 pl-3 border-l border-gray-200 space-y-1 py-1">
+            <li><a href="/articles/where-linguistics-meets-nlp.html" class="block py-2 hover:text-brand-dark">Where Linguistics Meets NLP</a></li>
+            <li><a href="/articles/from-annotation-to-application.html" class="block py-2 hover:text-brand-dark">From Annotation to Application</a></li>
+            <li><a href="https://stellabullo.com/" target="_blank" rel="noopener" class="block py-2 hover:text-brand-dark">More writing → stellabullo.com</a></li>
+          </ul>
+        </details>
+      </li>
+
       <li><a href="#projects" class="block py-2 hover:text-brand-dark">Projects</a></li>
       <li><a href="#contact" class="block py-2 hover:text-brand-dark">Contact</a></li>
       <li>
@@ -120,6 +159,7 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <section id="top" class="pt-32 md:pt-40 pb-20 md:pb-28 px-5 md:px-8 bg-gradient-to-b from-white to-brand-light/20">
   <div class="max-w-4xl mx-auto text-center">
 
@@ -137,7 +177,7 @@
     </h1>
 
     <p class="text-2xl md:text-3xl text-gray-600 font-['Caveat',cursive] mb-10 animate-fadeInUp">
-      Where linguistics, technology, and human experience meet.
+      Tools at the intersection of language and human experience.
     </p>
 
     <div class="flex justify-center gap-3 md:gap-4">
@@ -154,8 +194,7 @@
 </section>
 
 
-
-<!-- CAPABILITIES -->
+<!-- SERVICES -->
 <section id="services" class="bg-gray-50">
   <div class="max-w-6xl mx-auto px-6 py-12 md:px-12 md:py-16 text-center" data-aos="fade-up">
     <h2 class="text-2xl md:text-3xl font-semibold text-brand mb-6">Services</h2>
@@ -216,25 +255,23 @@
       <div data-aos="fade-up" class="space-y-5">
         <h2 class="text-2xl md:text-3xl font-semibold text-brand">About</h2>
         <p class="text-gray-700 leading-relaxed">
-          Sierra Codes was founded by Stella Bullo, a linguist with a PhD who brought her academic expertise 
-          into software development. We work at the intersection of language, health, and technology, creating 
-          multilingual, small-scale but meaningful tools that transform lived experience into practical and 
+          Sierra Codes was founded by Stella Bullo, a linguist with a PhD who brought her academic expertise
+          into software development. We work at the intersection of language, health, and technology, creating
+          multilingual, small-scale but meaningful tools that transform lived experience into practical and
           accessible applications.
         </p>
-<div class="mt-6 flex flex-wrap gap-3">
-  <a href="/articles/where-linguistics-meets-nlp.html" 
-     class="inline-flex items-center px-4 py-2 bg-brand text-white rounded-md shadow-sm hover:bg-brand-dark transition">
-    Read about my journey
-  </a>
 
-  <a href="https://stellabullo.com/" target="_blank" rel="noopener"
-     class="inline-flex items-center px-4 py-2 border border-brand text-brand rounded-md hover:bg-brand-light/20 transition">
-    More writing here
-  </a>
-</div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/articles/where-linguistics-meets-nlp.html" 
+             class="inline-flex items-center px-4 py-2 bg-brand text-white rounded-md shadow-sm hover:bg-brand-dark transition">
+            Read about my journey
+          </a>
 
 
+         
+        </div>
       </div>
+
       <div data-aos="fade-left" class="flex justify-center">
         <figure>
           <img
@@ -252,57 +289,66 @@
   </div>
 </section>
 
-
 <!-- PORTFOLIO -->
 <section id="work" class="bg-gray-50 p-8 md:p-16">
   <h2 class="text-2xl font-semibold text-brand text-center mb-8">Portfolio</h2>
 
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
- <!--LocalAnnotator-->
-<div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up">
-  <h3 class="text-lg font-semibold">LocalAnnotator</h3>
-  <img src="/src/local-annotator.png" alt="LocalAnnotator app" class="my-4 rounded" />
-  <p class="text-xs text-gray-600 mb-2">Tech: Python, Pydantic, YAML, JSON Schema, FastAPI (planned)</p>
-  <p class="text-sm text-gray-700 mb-4">
-    A localisation & annotation framework for language across domains. 
-  </p>
-  <span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-medium px-2 py-1 rounded">Coming Soon</span>
-</div>
-
-
     <!-- Explain My Pain -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up">
       <h3 class="text-lg font-semibold">Translate / Explain My Pain</h3>
-      <img src="/src/explain-my-pain.png" alt="Explain My Pain app" class="my-4 rounded" />
+      <img src="/src/explain-my-pain.png" alt="Explain My Pain app" class="my-4 rounded" loading="lazy" />
       <p class="text-xs text-gray-600 mb-2">Tech: Python, Flask, JavaScript, NLP</p>
       <p class="text-sm text-gray-700 mb-4">
-        Bilingual app that turns metaphorical pain descriptions into plain clinical summaries for patients and doctors.
+        Bilingual app that turns metaphorical pain descriptions into clear clinical summaries for patients and clinicians.
       </p>
       <a href="https://explain-my-pain.onrender.com/" target="_blank" rel="noopener" class="text-brand hover:underline">Live app</a>
       <br />
       <a href="https://github.com/Stella5791/translate-my-pain" target="_blank" rel="noopener" class="text-brand hover:underline">View source code</a>
-    <p class="text-xs text-gray-600 mb-4">
-        <em>Note: the app may take a few seconds to load while the server starts up.</em>  </p>
+      <p class="text-xs text-gray-600 mt-2">
+        <em>Note: the app may take a few seconds to load while the server starts up.</em>
+      </p>
+      <p class="text-sm mt-2">
+        See how this fits into the full pipeline in
+        <a href="/articles/from-annotation-to-application.html" class="text-brand hover:text-brand-dark underline">this article</a>.
+      </p>
     </div>
 
     <!-- Metaphor Tagger -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
       <h3 class="text-lg font-semibold">Metaphor Tagger Tool</h3>
-      <img src="/src/metaphor_tagger.png" alt="Metaphor Tagger tool" class="my-4 rounded" />
+      <img src="/src/metaphor_tagger.png" alt="Metaphor Tagger tool" class="my-4 rounded" loading="lazy" />
       <p class="text-xs text-gray-600 mb-2">Tech: Python, Regex, Flask</p>
       <p class="text-sm text-gray-700 mb-4">
         Assists researchers by automatically tagging figurative language in narratives, saving time in qualitative analysis.
       </p>
       <a href="https://github.com/Stella5791/metaphor-tagger" target="_blank" rel="noopener" class="text-brand hover:underline">View source code</a>
+      <p class="text-sm mt-2">
+        See how this fits into the full pipeline in
+        <a href="/articles/from-annotation-to-application.html" class="text-brand hover:text-brand-dark underline">this article</a>.
+      </p>
     </div>
 
-    
+    <!-- LocalAnnotator -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up">
+      <h3 class="text-lg font-semibold">LocalAnnotator</h3>
+      <img src="/src/local-annotator.png" alt="LocalAnnotator app" class="my-4 rounded" loading="lazy" />
+      <p class="text-xs text-gray-600 mb-2">Tech: Python, Pydantic, YAML, JSON Schema, FastAPI (planned)</p>
+      <p class="text-sm text-gray-700 mb-4">
+        A localisation & annotation framework for language across domains.
+      </p>
+      <span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-medium px-2 py-1 rounded">Coming Soon</span>
+      <p class="text-sm mt-2">
+        See how this fits into the full pipeline in
+        <a href="/articles/from-annotation-to-application.html" class="text-brand hover:text-brand-dark underline">this article</a>.
+      </p>
+    </div>
 
     <!-- CSV Viz -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
       <h3 class="text-lg font-semibold">CSV Data Visualization</h3>
-      <img src="/src/project2.png" alt="Data visualization project" class="my-4 rounded" />
+      <img src="/src/project2.png" alt="Data visualization project" class="my-4 rounded" loading="lazy" />
       <p class="text-xs text-gray-600 mb-2">Tech: Python, Matplotlib, CSV</p>
       <p class="text-sm text-gray-700 mb-4">
         Parses CSV files and generates dynamic charts to illustrate trends in population growth.
@@ -313,7 +359,7 @@
     <!-- React Dictionary -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
       <h3 class="text-lg font-semibold">React Dictionary App</h3>
-      <img src="/src/project4.png" alt="React Dictionary App" class="my-4 rounded" />
+      <img src="/src/project4.png" alt="React Dictionary App" class="my-4 rounded" loading="lazy" />
       <p class="text-xs text-gray-600 mb-2">Tech: React, Axios, Bootstrap, APIs</p>
       <p class="text-sm text-gray-700 mb-4">
         Interactive dictionary that pulls definitions, audio, and images from multiple sources.
@@ -324,7 +370,7 @@
     <!-- Travel Website -->
     <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
       <h3 class="text-lg font-semibold">Responsive Travel Website</h3>
-      <img src="/src/project5.png" alt="Responsive Travel Website" class="my-4 rounded" />
+      <img src="/src/project5.png" alt="Responsive Travel Website" class="my-4 rounded" loading="lazy" />
       <p class="text-xs text-gray-600 mb-2">Tech: HTML, CSS, Bootstrap</p>
       <p class="text-sm text-gray-700 mb-4">
         Promotional site for Córdoba, Argentina, featuring cultural highlights, maps, and local info.
@@ -356,7 +402,7 @@
         </p>
       </div>
 
-      <!-- Stance with Appraisal Theory -->
+      <!-- Appraisal-based Stance Classifier -->
       <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
         <h3 class="text-lg font-semibold">Appraisal-based Stance Classifier</h3>
         <p class="text-xs text-gray-600 mt-1">Tech: Python, scikit-learn, spaCy</p>
@@ -365,11 +411,9 @@
         </p>
       </div>
 
-    
-
-      <!-- Pragmatics aware Sentiment -->
+      <!-- Pragmatics-aware Sentiment -->
       <div class="bg-gray-50 p-5 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
-        <h3 class="text-lg font-semibold">Pragmatics aware Sentiment</h3>
+        <h3 class="text-lg font-semibold">Pragmatics-aware Sentiment</h3>
         <p class="text-xs text-gray-600 mt-1">Tech: Python, spaCy, weak supervision</p>
         <p class="text-sm text-gray-700 mt-2">
           Captures irony and understatement with pragmatic annotation.
@@ -395,7 +439,7 @@
           Let’s work together
         </h2>
         <p class="text-gray-700 leading-relaxed">
-          Bilingual dev and linguist building clear, human centred tools.
+          Bilingual dev and linguist building clear, human-centred tools.
           Send me an email or connect on LinkedIn. Happy to chat projects, collaborations, or speaking.
         </p>
 
@@ -470,7 +514,7 @@
 <footer id="footer" class="bg-brand-light/20 border-t border-gray-200">
   <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
     <div class="text-sm text-gray-600">
-      © 2025 <span class="font-semibold">Sierra Codes</span> founded by Stella Bullo
+      © 2025 <span class="font-semibold">Sierra Codes</span> — founded by Stella Bullo
     </div>
 
     <div class="flex items-center gap-5 text-sm text-brand">
@@ -592,6 +636,13 @@
         }
       });
     }
+
+    // Optional: close any open <details> (e.g., Writing dropdown) on ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('details[open]').forEach(d => d.removeAttribute('open'));
+      }
+    });
   });
 </script>
 </body>
