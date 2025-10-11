@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" width="100" height="60">
+  <polyline fill="none"
+            stroke="#1d7f96"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            vector-effect="non-scaling-stroke"
+            points="5,55 30,20 50,45 75,10 95,55" />
+  <title>Sierra Codes — line logo (stroke-width 6)</title>
+</svg>
