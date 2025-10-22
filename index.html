@@ -10,9 +10,9 @@
   <meta name="author" content="Sierra Codes" />
   <title>Sierra Codes</title>
 
-  <!-- SEO: alternates -->
-  <link rel="alternate" href="https://sierracodes.com/" hreflang="en" />
-  <link rel="alternate" href="https://sierracodes.com/es/" hreflang="es" />
+  <!-- SEO: alternates (ES página principal, EN en /indexEN.html) -->
+  <link rel="alternate" href="https://sierracodes.com/" hreflang="es" />
+  <link rel="alternate" href="https://sierracodes.com/indexEN.html" hreflang="en" />
   <link rel="alternate" href="https://sierracodes.com/" hreflang="x-default" />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,25 +21,11 @@
       theme: {
         extend: {
           colors: {
-            brand: {
-              DEFAULT: '#166E7A',
-              dark: '#0F4F58',
-              light: '#5ECAC7'
-            },
-            accent: {
-              warm: '#E6C27A',
-              green: '#6B8F71'
-            }
+            brand: { DEFAULT: '#166E7A', dark: '#0F4F58', light: '#5ECAC7' },
+            accent: { warm: '#E6C27A', green: '#6B8F71' }
           },
-          keyframes: {
-            fadeInUp: {
-              '0%':   { opacity: '0', transform: 'translateY(10px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' }
-            }
-          },
-          animation: {
-            fadeInUp: 'fadeInUp 1s ease-out forwards'
-          }
+          keyframes: { fadeInUp: { '0%': { opacity: '0', transform: 'translateY(10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } },
+          animation: { fadeInUp: 'fadeInUp 1s ease-out forwards' }
         }
       }
     }
@@ -48,10 +34,9 @@
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- Lucide Icons -->
+  <!-- Lucide Icons + Fonts -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Global smooth scrolling + transitions -->
@@ -61,7 +46,6 @@
     .card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
     img:hover { transform: scale(1.03); }
     a:hover { text-decoration: underline; color: #1D7F96; }
-
     summary::-webkit-details-marker { display: none; }
     summary::marker { content: ""; }
     details[open] > ul { z-index: 60; }
@@ -71,23 +55,21 @@
 <body class="font-['Poppins',sans-serif] text-gray-900 bg-white">
 
 <!-- NAV -->
-<nav id="site-nav" class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur shadow-md text-sm" role="navigation" aria-label="Principal" role="navigation" aria-label="Principal">
+<nav id="site-nav" class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur shadow-md text-sm" role="navigation" aria-label="Principal">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
     <!-- Marca -->
     <div class="flex items-center space-x-2">
-      <!-- Logo línea Sierra -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" class="w-8 h-8" aria-hidden="true" focusable="false" id="logo-mark">
         <polyline fill="none" stroke="#166E7A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="5,55 30,20 50,45 75,10 95,55" />
       </svg>
-      <h2 class="text-xl font-bold text-brand whitespace-nowrap"><a href="#top" id="brand-text" class="text-brand">Sierra Codes</a>
-      </h2>
+      <h2 class="text-xl font-bold text-brand whitespace-nowrap"><a href="#top" id="brand-text" class="text-brand">Sierra Codes</a></h2>
     </div>
 
     <!-- Menú escritorio -->
     <ul class="hidden md:flex gap-4 items-center" id="nav-links">
       <li><a href="#services" class="nav-link hover:text-brand-dark">Servicios</a></li>
       <li><a href="#about" class="nav-link hover:text-brand-dark">Sobre mí</a></li>
-      <li><a href="#work" class="nav-link hover:text-brand-dark">Portafolio</a></li>
+      <li><a href="#projects" class="nav-link hover:text-brand-dark">Proyectos</a></li>
       <li class="relative">
         <details class="group">
           <summary class="list-none inline-flex items-center gap-1 cursor-pointer select-none hover:text-brand-dark focus:outline-none">
@@ -103,7 +85,6 @@
           </ul>
         </details>
       </li>
-      <li><a href="#projects" class="nav-link hover:text-brand-dark">Proyectos</a></li>
       <li><a href="#contact" class="nav-link hover:text-brand-dark">Contacto</a></li>
       <li>
         <a href="/indexEN.html" class="border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20" aria-label="Cambiar a inglés" id="lang-pill">ENGLISH</a>
@@ -126,7 +107,7 @@
     <ul class="px-4 py-3 space-y-2">
       <li><a href="#services" class="block py-2 hover:text-brand-dark">Servicios</a></li>
       <li><a href="#about" class="block py-2 hover:text-brand-dark">Sobre mí</a></li>
-      <li><a href="#work" class="block py-2 hover:text-brand-dark">Portafolio</a></li>
+      <li><a href="#projects" class="block py-2 hover:text-brand-dark">Proyectos</a></li>
       <li>
         <details class="group">
           <summary class="list-none w-full flex items-center justify-between py-2 cursor-pointer hover:text-brand-dark">
@@ -142,17 +123,14 @@
           </ul>
         </details>
       </li>
-      <li><a href="#projects" class="block py-2 hover:text-brand-dark">Proyectos</a></li>
       <li><a href="#contact" class="block py-2 hover:text-brand-dark">Contacto</a></li>
-      <li>
-        <a href="/indexEN.html" class="mt-2 border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20 w-full inline-block text-center" aria-label="Cambiar a inglés">ENGLISH</a>
-      </li>
+      <li><a href="/indexEN.html" class="mt-2 border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20 w-full inline-block text-center" aria-label="Cambiar a inglés">ENGLISH</a></li>
     </ul>
   </div>
 </nav>
 <!-- FIN NAV -->
 
-<!-- HERO con sierras -->
+<!-- HERO -->
 <section class="relative isolate overflow-hidden min-h-screen flex items-center justify-center">
   <div class="absolute inset-0 -z-10">
     <img src="/src/lison-zhao-sierras.jpg" alt="Sierras de Córdoba al atardecer" class="w-full h-full object-cover">
@@ -165,64 +143,47 @@
           <polyline fill="none" stroke="#166E7A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" points="5,55 30,20 50,45 75,10 95,55" />
         </svg>
       </span>
-     <div class="text-center mt-8 sm:mt-12">
-  <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-snug md:leading-relaxed mb-3">
-    Tecnología global desarrollada localmente
-  </h1>
-  <p class="text-base sm:text-lg md:text-xl text-white/90 italic mb-6 leading-relaxed">
-    Innovación al servicio de nuestra comunidad.
-  </p>
-  <div class="flex flex-wrap justify-center gap-4">
-    <div class="flex flex-wrap justify-center gap-4">
-  <!-- Botón claro -->
-  <a href="#about"
-     class="px-5 py-2 bg-white text-[#1d7f96] font-semibold rounded-full shadow border border-transparent hover:bg-[#1d7f96] hover:text-white hover:scale-105 transition transform duration-300">
-    Sobre mí
-  </a>
-
-  <!-- Botón invertido -->
-  <a href="#contact"
-     class="px-5 py-2 border border-white text-white font-semibold rounded-full hover:bg-white hover:text-[#1d7f96] hover:scale-105 transition transform duration-300">
-    Contacto
-  </a>
-</div>
-
-  </div>
-  <p class="mt-4 text-sm text-white/80">Berrotarán y zona · Español / English</p>
-</div>
-
-
+      <div class="text-center mt-8 sm:mt-12">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-snug md:leading-relaxed mb-3">
+          Tecnología global desarrollada localmente
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl text-white/90 italic mb-6 leading-relaxed">
+          Innovación al servicio de nuestra comunidad.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#about" class="px-5 py-2 bg-white text-[#1d7f96] font-semibold rounded-full shadow border border-transparent hover:bg-[#1d7f96] hover:text-white hover:scale-105 transition">Sobre mí</a>
+          <a href="#contact" class="px-5 py-2 border border-white text-white font-semibold rounded-full hover:bg-white hover:text-[#1d7f96] hover:scale-105 transition">Contacto</a>
+        </div>
+        <p class="mt-4 text-sm text-white/80">Berrotarán y zona · Español / English</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- SERVICIOS -->
 <section id="services" class="relative overflow-hidden">
-  <!-- fondo suave -->
   <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(22,110,122,0.06)_0%,rgba(22,110,122,0.02)_100%)]"></div>
-
   <div class="max-w-6xl mx-auto px-6 py-20 md:px-12 md:py-24">
-    <!-- encabezado -->
     <div class="text-center max-w-3xl mx-auto mb-14">
       <p class="text-xs tracking-[0.22em] uppercase text-brand/80 mb-2">Qué hacemos</p>
       <h2 class="text-3xl md:text-4xl font-extrabold text-brand mb-3">Servicios</h2>
-          </div>
+    </div>
 
-    <!-- grid con dos tarjetas -->
     <div class="grid md:grid-cols-2 gap-10 lg:gap-14">
       <!-- Tarjeta 1 -->
       <div class="relative rounded-2xl bg-brand text-white p-8 shadow-xl ring-1 ring-brand/10">
-       <div class="flex items-start gap-3 mb-4">
+        <div class="flex items-start gap-3 mb-4">
           <i data-lucide="monitor" class="w-6 h-6 text-white"></i>
           <h3 class="text-xl font-bold leading-snug">Desarrollo Web & Front-end</h3>
         </div>
         <ul class="space-y-2 text-white/95">
           <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 mt-0.5"></i> Diseño y producción de páginas web</li>
-          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 mt-0.5"></i> Integración de redes sociales</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 mt-0.5"></i> Integración de redes sociales + WhatsApp</li>
           <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 mt-0.5"></i> SEO local y lanzamiento</li>
         </ul>
         <div class="mt-6 flex items-center justify-between">
           <span class="inline-flex items-center text-xs px-2.5 py-1 rounded-full bg-white/15">Entrega rápida</span>
-          <a href="#work" class="text-white underline underline-offset-4 decoration-white/60 hover:decoration-white">Ver ejemplos</a>
+          <a href="#projects" class="text-white underline underline-offset-4 decoration-white/60 hover:decoration-white">Ver ejemplos</a>
         </div>
       </div>
 
@@ -239,26 +200,16 @@
         </ul>
         <div class="mt-6 flex items-center justify-between">
           <span class="inline-flex items-center text-xs px-2.5 py-1 rounded-full bg-brand/10 text-brand font-medium">Bilingüe EN/ES</span>
-          <a href="#work" class="text-brand underline underline-offset-4 decoration-brand/50 hover:decoration-brand">Ver casos</a>
+          <a href="#projects" class="text-brand underline underline-offset-4 decoration-brand/50 hover:decoration-brand">Ver casos</a>
         </div>
       </div>
     </div>
 
-    <!-- CTA -->
     <div class="text-center mt-14">
-  <a href="#contact"
-   class="inline-block px-6 py-3 bg-brand text-white font-semibold rounded-full shadow border border-transparent hover:bg-white hover:text-brand hover:border-brand hover:scale-105 transition transform duration-300">
-  Solicitar cotización
-</a>
-
-
+      <a href="#contact" class="inline-block px-6 py-3 bg-brand text-white font-semibold rounded-full shadow border border-transparent hover:bg-white hover:text-brand hover:border-brand hover:scale-105 transition">Solicitar cotización</a>
     </div>
   </div>
 </section>
-
-
-
-
 
 <!-- ABOUT -->
 <section id="about" class="bg-brand-light/30">
@@ -266,218 +217,191 @@
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div data-aos="fade-up" class="space-y-5">
         <h2 class="text-2xl md:text-3xl font-semibold text-brand">Sobre mí</h2>
-        <p class="text-gray-700 leading-relaxed">
-  Creada por Stella Bullo, lingüista (PhD). Experiencia global, ejecución local.
-  Sierra Codes construye sitios y micro-apps rápidos y medibles para emprendedores y profesionales de Berrotarán y alrededores.
+       <p class="text-gray-700 leading-relaxed">
+ Soy Stella Bullo, doctorada en Lingüística en Reino Unido. <br/>Con experiencia global y enfoque local, en Sierra Codes diseño sitios rápidos, móviles y medibles para negocios y profesionales de Berrotarán y la región, integrando herramientas útiles y contenidos claros. <br/>También desarrollo micro-apps lingüísticas (PLN) que transforman el lenguaje en herramientas prácticas para distintos ámbitos: desde la comunicación y la salud, hasta la cultura y los proyectos comunitarios.</p>
+
+
+        <!-- Artículos -->
+        <section class="mt-6">
+          <h3 class="text-xl font-semibold text-[#1d7f96] mb-3">Artículos seleccionados</h3>
+          <div class="flex flex-wrap gap-2 justify-start">
+  <a href="/articles/from-language-to-code.html" 
+     class="inline-flex items-center px-2.5 py-1 text-sm border border-[#1d7f96] text-[#1d7f96] rounded-md hover:bg-[#1d7f96]/10 transition">
+    Del lenguaje al código
+  </a>
+  <a href="/articles/where-linguistics-meets-nlp.html" 
+     class="inline-flex items-center px-2.5 py-1 text-sm border border-[#1d7f96] text-[#1d7f96] rounded-md hover:bg-[#1d7f96]/10 transition">
+    De la lingüística al PLN
+  </a>
+  <a href="/articles/from-annotation-to-application.html" 
+     class="inline-flex items-center px-2.5 py-1 text-sm border border-[#1d7f96] text-[#1d7f96] rounded-md hover:bg-[#1d7f96]/10 transition">
+    De la anotación a la aplicación
+  </a>
+</div>
+
+        </section>
+      </div>
+
+    <div data-aos="fade-left" class="flex justify-center">
+  <figure class="relative">
+    <!-- Subtle soft halo -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="w-72 h-72 rounded-full bg-[#4FBFBB]/25 blur-sm"></div>
+    </div>
+
+    <!-- Image -->
+    <img 
+      src="/src/stella-bullo.png" 
+      alt="Stella Bullo — linguist and developer" 
+      class="relative z-10 rounded-full w-64 h-64 object-cover shadow-lg ring-2 ring-white/70 mx-auto" 
+      loading="lazy"
+    />
+
+    <!-- Caption -->
+    <figcaption class="text-xs text-gray-600 mt-4 italic text-center">
+      Fundadora: <span class="font-medium">Stella Bullo</span>
+    </figcaption>
+  </figure>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PORTAFOLIO / PROYECTOS -->
+<section id="work" class="bg-gray-50 p-8 md:p-16">
+  <span id="projects" class="block -mt-24 pt-24"></span>
+
+  <h2 class="text-3xl font-extrabold text-brand text-center mb-12 tracking-tight">Portafolio</h2>
+
+  <!-- Grupo 1: Front-end / Web -->
+  <div class="max-w-6xl mx-auto text-center md:text-left">
+    <h3 class="text-2xl font-bold text-brand uppercase tracking-wide mb-3">Proyectos Web & Front-end</h3>
+   <p class="text-base text-gray-700 mb-10 leading-relaxed">
+  Sitios rápidos, móviles y medibles para comercios y profesionales de Berrotarán y zona. 
+  Diseño claro, WhatsApp/Instagram integrados y SEO local para que te encuentren y te escriban sin fricción.
 </p>
 
-    <!-- Artículos seleccionados -->
-<section class="mt-10">
-  <h3 class="text-xl font-semibold text-[#1d7f96] mb-4">Artículos seleccionados</h3>
 
-  <div class="flex flex-wrap gap-3">
-    <a href="/articles/from-language-to-code.html"
-       class="inline-flex items-center px-4 py-2 border-2 border-[#1d7f96] text-[#1d7f96] rounded-lg hover:bg-[#1d7f96]/10 transition">
-      Del lenguaje al código
-    </a>
-    <a href="/articles/where-linguistics-meets-nlp.html"
-       class="inline-flex items-center px-4 py-2 border-2 border-[#1d7f96] text-[#1d7f96] rounded-lg hover:bg-[#1d7f96]/10 transition">
-     De la lingüística al PLN
-    </a>
-    <a href="/articles/from-annotation-to-application.html"
-       class="inline-flex items-center px-4 py-2 border-2 border-[#1d7f96] text-[#1d7f96] rounded-lg hover:bg-[#1d7f96]/10 transition">
-      De la anotación a la aplicación
-    </a>
-  </div>
-</section>
-
-
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- PsicoSalud -->
+      <div class="bg-white p-5 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up">
+        <h4 class="text-lg font-semibold text-gray-800 mb-2">PsicoSalud Berrotarán</h4>
+        <img src="/src/PsicoSaludBerrotarán.png" alt="Sitio PsicoSalud Berrotarán" class="my-4 mx-auto rounded max-h-[160px] object-contain" loading="lazy" />
+        <p class="text-xs text-gray-500 mb-2">Tec: HTML, Tailwind, WhatsApp/Instagram</p>
+        <p class="text-sm text-gray-700 mb-4">Landing ligera y móvil con contacto directo por WhatsApp e Instagram. Contenidos claros y foco local.</p>
+        <a href="https://psicosaludberrotaran.com/" target="_blank" rel="noopener" class="text-brand hover:underline">Sitio en vivo</a>
       </div>
-      <div data-aos="fade-left" class="flex justify-center">
-        <figure>
-          <img src="/src/stella-bullo.png" alt="Stella Bullo — lingüista y desarrolladora" class="rounded-full w-56 h-56 object-cover shadow-md hover:shadow-lg transition-shadow mx-auto" loading="lazy" />
-          <figcaption class="text-xs text-gray-500 mt-2 italic text-center">Fundadora: <strong>Stella Bullo</strong></figcaption>
-        </figure>
+
+      <!-- Córdoba / Travel -->
+      <div class="bg-white p-5 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+        <h4 class="text-lg font-semibold text-gray-800 mb-2">Córdoba · Sitio de viajes responsivo</h4>
+        <img src="/src/travel-cordoba.png" alt="Sitio de viajes de Córdoba" class="my-4 mx-auto rounded max-h-[160px] object-contain" loading="lazy" />
+        <p class="text-xs text-gray-500 mb-2">Tec: HTML, CSS, Bootstrap</p>
+        <p class="text-sm text-gray-700 mb-4">Promociona atractivos culturales y recursos locales con diseño responsivo.</p>
+        <a href="https://silly-stroopwafel-ba4b16.netlify.app/" target="_blank" rel="noopener" class="text-brand hover:underline">Sitio en vivo</a>
+      </div>
+
+      <!-- KidsAI -->
+      <div class="bg-white p-5 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+        <h4 class="text-lg font-semibold text-gray-800 mb-2">KidsAI · Recursos para familias y escuelas</h4>
+        <img src="/src/kidsAI.png" alt="Sitio KidsAI" class="my-4 mx-auto rounded max-h-[160px] object-contain" loading="lazy" />
+        <p class="text-xs text-gray-500 mb-2">Tec: HTML, Tailwind (prototipo)</p>
+        <p class="text-sm text-gray-700 mb-2">Landing educativa con contenidos curados sobre IA para la infancia y CTA de contacto.</p>
+        <a href="https://kidsai.netlify.app/" target="_blank" rel="noopener" class="text-brand hover:underline">Sitio en vivo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Separador -->
+  <div class="max-w-6xl mx-auto">
+    <hr class="my-14 border-gray-400" />
+  </div>
+
+  <!-- Grupo 2: NLP / IA -->
+  <div class="max-w-6xl mx-auto text-center md:text-left">
+    <h3 class="text-2xl font-bold text-brand uppercase tracking-wide mb-3">Proyectos NLP / IA</h3>
+     <p class="text-base text-gray-700 mb-10 leading-relaxed">
+      Aplicaciones lingüísticas y herramientas de anotación (EN/ES) que convierten lenguaje real en datos útiles. 
+      Enfoque en salud y educación con ética, transparencia y resultados interpretables como principios de diseño.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Explain My Pain -->
+      <div class="bg-white p-5 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up">
+        <h4 class="text-lg font-semibold text-gray-800 mb-2">Explain My Pain</h4>
+        <img src="/src/explain-my-pain.png" alt="Aplicación Explain My Pain" class="my-4 mx-auto rounded max-h-[160px] object-contain" loading="lazy" />
+        <p class="text-xs text-gray-500 mb-2">Tec: Python, Flask, JavaScript, PLN</p>
+        <p class="text-sm text-gray-700 mb-4">App bilingüe que convierte descripciones metafóricas del dolor en resúmenes clínicos claros para pacientes y profesionales.</p>
+        <a href="https://explain-my-pain.onrender.com/" target="_blank" rel="noopener" class="text-brand hover:underline">App en vivo</a><br />
+        <a href="https://github.com/Stella5791/translate-my-pain" target="_blank" rel="noopener" class="text-brand hover:underline">Código fuente</a>
+      </div>
+
+      <!-- Metaphor Tagger -->
+      <div class="bg-white p-5 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+        <h4 class="text-lg font-semibold text-gray-800 mb-2">Herramienta de Etiquetado de Metáforas</h4>
+        <img src="/src/metaphor_tagger.png" alt="Herramienta Metaphor Tagger" class="my-4 mx-auto rounded max-h-[160px] object-contain" loading="lazy" />
+        <p class="text-xs text-gray-500 mb-2">Tec: Python, Regex, Flask</p>
+        <p class="text-sm text-gray-700 mb-4">Asiste a investigadores etiquetando automáticamente lenguaje figurado en narrativas, ahorrando tiempo en análisis cualitativo.</p>
+        <a href="https://github.com/Stella5791/metaphor-tagger" target="_blank" rel="noopener" class="text-brand hover:underline">Código fuente</a>
+      </div>
+
+      <!-- LocalAnnotator -->
+      <div class="bg-white p-5 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+        <h4 class="text-lg font-semibold text-gray-800 mb-2">LocalAnnotator</h4>
+        <img src="/src/local-annotator.png" alt="Aplicación LocalAnnotator" class="my-4 mx-auto rounded max-h-[160px] object-contain" loading="lazy" />
+        <p class="text-xs text-gray-500 mb-2">Tec: Python, Pydantic, YAML, JSON Schema, FastAPI (planeado)</p>
+        <p class="text-sm text-gray-700 mb-2">Marco de localización y anotación para distintos dominios lingüísticos.</p>
+        <span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-medium px-2 py-1 rounded">Próximamente</span>
       </div>
     </div>
   </div>
 </section>
-
-<!-- CLIENTES / PROYECTOS DESTACADOS -->
-<section id="work" class="bg-gray-50 p-8 md:p-16">
-  <h2 class="text-2xl font-semibold text-brand text-center mb-8">Portafolio</h2>
-
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-    <!-- PsicoSalud -->
-    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up">
-      <h3 class="text-lg font-semibold">PsicoSalud Berrotarán</h3>
-      <img src="/src/PsicoSaludBerrotarán.png" alt="Sitio PsicoSalud Berrotarán" class="my-4 rounded" loading="lazy" />
-      <p class="text-xs text-gray-600 mb-2">Tec: HTML, Tailwind, Integración WhatsApp/Instagram</p>
-      <p class="text-sm text-gray-700 mb-4">
-        Landing ligera y móvil con contacto directo por WhatsApp e Instagram. Contenidos claros y foco local.
-      </p>
-      <a href="https://psicosaludberrotaran.com/" target="_blank" rel="noopener" class="text-brand hover:underline">Sitio en vivo</a>
-    </div>
-
-    <!-- Explain My Pain -->
-    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up">
-      <h3 class="text-lg font-semibold">Explain My Pain</h3>
-      <img src="/src/explain-my-pain.png" alt="Aplicación Explain My Pain" class="my-4 rounded" loading="lazy" />
-      <p class="text-xs text-gray-600 mb-2">Tec: Python, Flask, JavaScript, PLN</p>
-      <p class="text-sm text-gray-700 mb-4">
-        App bilingüe que convierte descripciones metafóricas del dolor en resúmenes clínicos claros para pacientes y profesionales.
-      </p>
-      <a href="https://explain-my-pain.onrender.com/" target="_blank" rel="noopener" class="text-brand hover:underline">App en vivo</a>
-      <br />
-      <a href="https://github.com/Stella5791/translate-my-pain" target="_blank" rel="noopener" class="text-brand hover:underline">Código fuente</a>
-      <p class="text-xs text-gray-600 mt-2">
-        <em>Nota: la app puede tardar unos segundos en cargar mientras inicia el servidor.</em>
-      </p>
-      <p class="text-sm mt-2">
-        Mira cómo encaja en el flujo completo en
-        <a href="/articles/from-annotation-to-application.html" class="text-brand hover:text-brand-dark underline">este artículo</a>.
-      </p>
-    </div>
-
-    <!-- Metaphor Tagger -->
-    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
-      <h3 class="text-lg font-semibold">Herramienta de Etiquetado de Metáforas</h3>
-      <img src="/src/metaphor_tagger.png" alt="Herramienta Metaphor Tagger" class="my-4 rounded" loading="lazy" />
-      <p class="text-xs text-gray-600 mb-2">Tec: Python, Regex, Flask</p>
-      <p class="text-sm text-gray-700 mb-4">
-        Asiste a investigadores etiquetando automáticamente lenguaje figurado en narrativas, ahorrando tiempo en análisis cualitativo.
-      </p>
-      <a href="https://github.com/Stella5791/metaphor-tagger" target="_blank" rel="noopener" class="text-brand hover:underline">Código fuente</a>
-      <p class="text-sm mt-2">
-        Mira cómo encaja en el flujo completo en
-        <a href="/articles/from-annotation-to-application.html" class="text-brand hover:text-brand-dark underline">este artículo</a>.
-      </p>
-    </div>
-
-    <!-- LocalAnnotator -->
-    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up">
-      <h3 class="text-lg font-semibold">LocalAnnotator</h3>
-      <img src="/src/local-annotator.png" alt="Aplicación LocalAnnotator" class="my-4 rounded" loading="lazy" />
-      <p class="text-xs text-gray-600 mb-2">Tec: Python, Pydantic, YAML, JSON Schema, FastAPI (planeado)</p>
-      <p class="text-sm text-gray-700 mb-4">
-        Un marco de localización y anotación para lenguaje en distintos dominios.
-      </p>
-      <span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-medium px-2 py-1 rounded">Próximamente</span>
-      <p class="text-sm mt-2">
-        Mira cómo encaja en el flujo completo en
-        <a href="/articles/from-annotation-to-application.html" class="text-brand hover:text-brand-dark underline">este artículo</a>.
-      </p>
-    </div>
-
-    <!-- CSV Viz -->
-    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
-      <h3 class="text-lg font-semibold">Visualización de Datos CSV</h3>
-      <img src="/src/project2.png" alt="Proyecto de visualización de datos" class="my-4 rounded" loading="lazy" />
-      <p class="text-xs text-gray-600 mb-2">Tec: Python, Matplotlib, CSV</p>
-      <p class="text-sm text-gray-700 mb-4">
-        Analiza archivos CSV y genera gráficos dinámicos para ilustrar tendencias de crecimiento poblacional.
-      </p>
-      <a href="https://replit.com/@smbu123/python-data-visualization-project" target="_blank" rel="noopener" class="text-brand hover:underline">Ver en Replit</a>
-    </div>
-
-    <!-- Sitio de Viajes -->
-    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
-      <h3 class="text-lg font-semibold">Sitio de Viajes Responsivo</h3>
-      <img src="/src/project5.png" alt="Sitio de viajes responsivo" class="my-4 rounded" loading="lazy" />
-      <p class="text-xs text-gray-600 mb-2">Tec: HTML, CSS, Bootstrap</p>
-      <p class="text-sm text-gray-700 mb-4">
-        Sitio promocional de Córdoba, Argentina, con atractivos culturales, mapas e información local.
-      </p>
-      <a href="https://silly-stroopwafel-ba4b16.netlify.app/" target="_blank" rel="noopener" class="text-brand hover:underline">Demo en vivo</a>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
 
 
 <!-- CONTACTO -->
 <section id="contact" class="relative border-t border-brand/20 bg-brand-light/30">
   <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
     <div class="grid md:grid-cols-2 gap-10 items-center">
-      <!-- Texto principal -->
       <div>
         <p class="text-xs uppercase tracking-widest text-brand/80 mb-2">Contacto</p>
         <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">Trabajemos juntos</h2>
         <p class="text-gray-700 leading-relaxed">
-         Desarrolladora y lingüista bilingüe creando tecnología con calidez local desde Berrotarán.
-          Envíame un mensaje por WhatsApp, email o conectemos en LinkedIn.
+          Desarrolladora y lingüista bilingüe creando tecnología con calidez local desde Berrotarán.
+          Escribime por WhatsApp o email y coordinamos tu sitio o proyecto.
         </p>
 
-     <div class="mt-6 flex flex-wrap gap-3">
-  <!-- WhatsApp -->
-  <a href="https://wa.me/543584836766" target="_blank"
-     class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-[#1EBE5D] text-white font-semibold shadow-sm hover:bg-white hover:text-[#1EBE5D] hover:border-[#1EBE5D] border border-transparent hover:scale-105 transition transform duration-300">
-    <i data-lucide="message-circle" class="w-5 h-5" aria-hidden="true"></i>
-    <span>WhatsApp</span>
-  </a>
-
-  <!-- Email -->
-  <a href="mailto:info@stellabullo.com"
-     class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-[#A8E6CF] text-[#1d7f96] font-semibold shadow-sm hover:bg-white hover:text-[#1d7f96] hover:border-[#A8E6CF] border border-transparent hover:scale-105 transition transform duration-300">
-    <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
-    <span>Enviar email</span>
-  </a>
-</div>
-
-
-
-       
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://wa.me/543584836766" target="_blank" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-[#1EBE5D] text-white font-semibold shadow-sm hover:bg-white hover:text-[#1EBE5D] hover:border-[#1EBE5D] border border-transparent hover:scale-105 transition">
+            <i data-lucide="message-circle" class="w-5 h-5" aria-hidden="true"></i><span>WhatsApp</span>
+          </a>
+          <a href="mailto:info@stellabullo.com" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-[#A8E6CF] text-[#1d7f96] font-semibold shadow-sm hover:bg-white hover:text-[#1d7f96] hover:border-[#A8E6CF] border border-transparent hover:scale-105 transition">
+            <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i><span>Enviar email</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Tarjetas de contacto -->
       <div class="grid sm:grid-cols-2 gap-4">
-        <!-- Email -->
         <a href="mailto:info@stellabullo.com" class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
-          <div class="flex items-center gap-2 text-brand font-semibold">
-            <i data-lucide="mail" class="w-5 h-5"></i>Email
-          </div>
+          <div class="flex items-center gap-2 text-brand font-semibold"><i data-lucide="mail" class="w-5 h-5"></i>Email</div>
           <p class="mt-2 text-gray-800 font-mono break-all">info@stellabullo.com</p>
-          
         </a>
-
-        <!-- WhatsApp -->
         <a href="https://wa.me/543584836766" target="_blank" rel="noopener" class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
-          <div class="flex items-center gap-2 text-brand font-semibold">
-            <i data-lucide="message-circle" class="w-5 h-5"></i>WhatsApp
-          </div>
+          <div class="flex items-center gap-2 text-brand font-semibold"><i data-lucide="message-circle" class="w-5 h-5"></i>WhatsApp</div>
           <p class="mt-2 text-gray-800 font-mono">+54 9 358 483 6766</p>
-          
         </a>
-
-        <!-- Teléfono -->
         <a href="tel:+543584836766" class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
-          <div class="flex items-center gap-2 text-brand font-semibold">
-            <i data-lucide="phone" class="w-5 h-5"></i>Llamadas
-          </div>
+          <div class="flex items-center gap-2 text-brand font-semibold"><i data-lucide="phone" class="w-5 h-5"></i>Llamadas</div>
           <p class="mt-2 text-gray-800 font-mono">+54 9 358 483 6766</p>
-    
         </a>
-
-        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" rel="noopener" class="group rounded-2xl border border-gray-200 bg-white/70 p-5 hover:shadow-md transition">
-          <div class="flex items-center gap-2 text-brand font-semibold">
-            <i data-lucide="linkedin" class="w-5 h-5"></i>LinkedIn
-          </div>
+          <div class="flex items-center gap-2 text-brand font-semibold"><i data-lucide="linkedin" class="w-5 h-5"></i>LinkedIn</div>
           <p class="mt-2 text-gray-800">Conectemos profesionalmente</p>
-      
         </a>
-
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- FOOTER -->
 <footer id="footer" class="bg-brand-light/50 border-t border-gray-200">
@@ -504,19 +428,10 @@
   document.addEventListener("DOMContentLoaded", () => {
     if (typeof lucide !== "undefined") lucide.createIcons();
 
-    // NAV fondo dinámico
-    const nav = document.getElementById("site-nav");
-    // Nav sólido por defecto (sin cambios al hacer scroll)
-// (dejamos sólo el resto de scripts más abajo)
-
     // Volver arriba
     const scrollBtn = document.getElementById("scrollToTopBtn");
-    window.addEventListener("scroll", () => {
-      scrollBtn.classList.toggle("hidden", window.scrollY < 300);
-    });
-    scrollBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    window.addEventListener("scroll", () => { scrollBtn.classList.toggle("hidden", window.scrollY < 300); });
+    scrollBtn.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
 
     // AOS
     AOS.init({ duration: 1000, once: true });
@@ -527,11 +442,11 @@
         const href = this.getAttribute("href");
         if (!href || href === "#" || href === "#0") return;
         const id = href.substring(1);
-        const target = document.getElementById(id);
+        const target = document.getElementById(id) || document.querySelector(`[id="${id}"]`) || document.querySelector(`#${id}`);
         if (target) {
           e.preventDefault();
           const offset = 80;
-          const offsetPosition = target.offsetTop - offset;
+          const offsetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
           window.scrollTo({ top: offsetPosition, behavior: "smooth" });
         }
       });
@@ -565,7 +480,7 @@
       });
     }
 
-    // Copiar email
+    // Copiar email (si existiera botón)
     const copyBtn = document.getElementById('copyEmail');
     const copyLabel = document.getElementById('copyEmailText');
     if (copyBtn && copyLabel) {
